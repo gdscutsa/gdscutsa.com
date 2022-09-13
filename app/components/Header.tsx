@@ -19,9 +19,9 @@ export default function Header() {
               to={to}
               className={({ isActive }) =>
                 isActive
-                  ? 'relative after:absolute after:w-full after:h-full after:inset-x-0 after:top-1 after:border-b-2 after:border-[#4285F4]' +
+                  ? 'relative after:absolute after:w-full after:h-full after:inset-x-0 after:top-1 after:border-b-2 text-gray-700 after:border-[#4285F4]' +
                     baseNavStyle
-                  : baseNavStyle
+                  : 'hover:text-gray-800' + baseNavStyle
               }
             >
               {name}
@@ -33,7 +33,7 @@ export default function Header() {
               href="https://gdsc.community.dev/the-university-of-texas-at-san-antonio/"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 text-green-600 border rounded border-green-600"
+              className="px-3 py-1.5 text-green-600 border rounded border-green-600 hover:border-green-500 hover:text-green-500"
             >
               Register
             </a>
