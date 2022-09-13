@@ -1,0 +1,43 @@
+import { Link, NavLink } from '@remix-run/react';
+import { Navigation } from '~/constants/navigation';
+
+const baseNavStyle = ' text-gray-600';
+
+export default function Header() {
+  return (
+    <header className="shadow absolute inset-x-0 h-16">
+      <div className="container max-w-6xl mx-auto flex h-full flex-row items-center px-4 justify-between">
+        <img
+          className="object-contain max-w-full max-h-full pt-2"
+          src="assets/logos/horizontal.svg"
+        ></img>
+
+        <nav className="hidden justify-center space-x-10 md:flex md:items-end">
+          {Navigation.map(({ name, to }) => (
+            <NavLink
+              key={name}
+              to={to}
+              className={({ isActive }) =>
+                isActive
+                  ? 'relative after:absolute after:w-full after:h-full after:inset-x-0 after:top-1 after:border-b-2 after:border-[#4285F4]' +
+                    baseNavStyle
+                  : baseNavStyle
+              }
+            >
+              {name}
+            </NavLink>
+          ))}
+
+          <div className="">
+            <Link
+              to="/login"
+              className="px-4 py-2 text-green-500 border rounded border-green-500"
+            >
+              Join
+            </Link>
+          </div>
+        </nav>
+      </div>
+    </header>
+  );
+}
