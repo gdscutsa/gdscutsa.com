@@ -8,7 +8,6 @@ import {
   ScrollRestoration,
   useCatch,
 } from '@remix-run/react';
-import FourOhFour from './routes/links';
 
 import tailwindStylesheetUrl from './styles/tailwind.css';
 

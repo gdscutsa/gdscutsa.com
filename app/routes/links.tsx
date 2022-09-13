@@ -1,46 +1,15 @@
 import { Link } from '@remix-run/react';
+import { QuickNav } from '~/constants/quicknav';
 
 type QuickLinkProps = {
   to: string;
   children: React.ReactNode;
 };
 
-type NavItemProps =
-  | {
-      to: string;
-      name: string;
-    }
-  | {
-      header: boolean;
-      name: string;
-    };
-
-const QuickNav: NavItemProps[] = [
-  { header: true, name: 'Info' },
-  { to: '/', name: 'Website' },
-  {
-    to: '/events',
-    name: 'Events',
-  },
-  {
-    to: 'https://rowdylink.utsa.edu/organization/gdsc',
-    name: 'RowdyLink',
-  },
-  { header: true, name: 'Socials' },
-  {
-    to: 'https://discord.gg/u9YSVNb6jN',
-    name: 'Discord',
-  },
-  {
-    to: 'https://www.instagram.com/gdsc.utsa/',
-    name: 'Instagram',
-  },
-];
-
 function QuickLink({ to, children }: QuickLinkProps) {
   return (
     <a
-      className="drop-shadow-md transition ease-in-out hover:-translate-y-1 hover:scale-105 duration-300 max-w-lg p-3 rounded-xl bg-[#4285F4] flex justify-center text-white text-lg"
+      className="drop-shadow-md transition ease-in-out hover:-translate-y-1 hover:scale-105 duration-150 max-w-lg p-3 rounded-xl bg-[#4285F4] flex justify-center text-white text-lg"
       href={to}
     >
       {children}
