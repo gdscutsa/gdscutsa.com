@@ -5,7 +5,7 @@ const baseNavStyle = ' text-gray-600';
 
 export default function Header() {
   return (
-    <header className="shadow absolute inset-x-0 h-16">
+    <header className="bg-white shadow z-10 inset-x-0 h-16">
       <div className="container max-w-6xl mx-auto flex h-full flex-row items-center px-4 justify-between space-x-4">
         <Link className="object-contain w-full h-full pt-2" to="/">
           <img

@@ -27,6 +27,7 @@ export const FooterNavigation: NavItem[] = [
   { to: '/events', name: 'Events' },
   { to: '/projects', name: 'Projects' },
   { to: '/team', name: 'Team' },
+  { to: 'https://rowdylink.utsa.edu/organization/gdsc', name: 'RowdyLink' },
   { to: '/links', name: 'Links' },
 ];
 

@@ -3,7 +3,7 @@ import { FooterNavigation, Navigation, Socials } from '~/constants/navigation';
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-300">
+    <footer className="border-t border-gray-300 bg-white">
       <div className="container max-w-6xl mx-auto h-full py-12 space-y-10 px-8 md:px-4">
         <div className="flex flex-col items-center justify-center md:grid md:grid-cols-3 gap-10 ">
           <div className="h-full">
@@ -19,12 +19,12 @@ export default function Footer() {
             <ul>
               {FooterNavigation.map(({ name, to }) => (
                 <li className="text-center md:text-left" key={to}>
-                  <Link
+                  <a
                     className="text-sm text-gray-600 hover:text-blue-500"
-                    to={to}
+                    href={to}
                   >
                     {name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
