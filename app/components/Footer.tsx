@@ -7,10 +7,12 @@ export default function Footer() {
       <div className="container max-w-6xl mx-auto h-full py-12 space-y-10 px-8 md:px-4">
         <div className="flex flex-col items-center justify-center md:grid md:grid-cols-3 gap-10 ">
           <div className="h-full">
-            <img
-              className="w-72 h-auto"
-              src="assets/logos/borderless.svg"
-            ></img>
+            <Link to="/">
+              <img
+                className="w-72 h-auto"
+                src="assets/logos/borderless.svg"
+              ></img>
+            </Link>
           </div>
           <div className="h-full">
             <h1 className="text-base text-gray-500 pb-2">Quick Links</h1>
