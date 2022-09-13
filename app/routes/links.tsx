@@ -9,7 +9,7 @@ type QuickLinkProps = {
 function QuickLink({ to, children }: QuickLinkProps) {
   return (
     <a
-      className="drop-shadow-md transition ease-in-out hover:-translate-y-1 hover:scale-105 duration-150 max-w-lg p-3 rounded-xl bg-[#4285F4] flex justify-center text-white text-lg"
+      className="drop-shadow-md transition ease-in-out hover:-translate-y-1 hover:scale-105 duration-150 max-w-lg p-3 rounded-xl bg-blue-500 flex justify-center text-white text-lg"
       href={to}
     >
       {children}
