@@ -6,7 +6,7 @@ const baseNavStyle = ' text-gray-600';
 export default function Header() {
   return (
     <header className="shadow absolute inset-x-0 h-16">
-      <div className="container max-w-6xl mx-auto flex h-full flex-row items-center px-4 justify-between">
+      <div className="container max-w-6xl mx-auto flex h-full flex-row items-center px-4 justify-between space-x-4">
         <img
           className="object-contain max-w-full max-h-full pt-2"
           src="assets/logos/horizontal.svg"
@@ -29,12 +29,14 @@ export default function Header() {
           ))}
 
           <div className="">
-            <Link
-              to="/login"
-              className="px-4 py-2 text-green-500 border rounded border-green-500"
+            <a
+              href="https://gdsc.community.dev/the-university-of-texas-at-san-antonio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 text-green-600 border rounded border-green-600"
             >
-              Join
-            </Link>
+              Register
+            </a>
           </div>
         </nav>
       </div>
