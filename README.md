@@ -1,4 +1,10 @@
-# Welcome to Remix!
+# gdscutsa.com
+
+The Semi-Offical site of GDSC - UTSA
+
+## Tools
+
+This site uses Remix
 
 - [Remix Docs](https://remix.run/docs)
 
