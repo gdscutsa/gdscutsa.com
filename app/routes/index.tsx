@@ -4,9 +4,9 @@ import Header from '~/components/Header';
 export default function Index() {
   return (
     <main className="min-h-screen">
-      <div className="flex flex-col h-screen justify-between">
+      <div className="flex flex-col h-screen justify-start">
         <Header />
-        <div className="w-full bg-center bg-no-repeat bg-cover bg-[url('/assets/images/background.png')] py-20 px-5 md:px-8">
+        <div className="w-full bg-center bg-no-repeat bg-cover bg-[url('/assets/images/home_background.png')] py-20 px-5 md:px-8">
           <div className="flex flex-col items-center justify-center container mx-auto max-w-6xl h-full md:grid md:gap-8 md:grid-cols-2 space-y-10">
             <div className="flex flex-col justify-center items-center md:items-start space-y-6 md:text-left text-center">
               <h1 className="text-4xl text-gray-700">
