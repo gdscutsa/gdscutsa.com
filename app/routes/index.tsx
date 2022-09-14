@@ -10,7 +10,7 @@ export default function Index() {
           <div className="flex flex-col items-center justify-center container mx-auto max-w-6xl h-full md:grid md:gap-8 md:grid-cols-2 space-y-10">
             <div className="flex flex-col justify-center items-center md:items-start space-y-6 md:text-left text-center">
               <h1 className="text-4xl text-gray-700">
-                Google Developer Student Club{' '}
+                Google Developer Student Clubs{' '}
                 <span className="font-bold">UTSA</span>
               </h1>
               <p className="text-gray-600">
