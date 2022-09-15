@@ -84,6 +84,7 @@ export default function Header() {
                     baseNavStyle
                   : 'hover:text-gray-800' + baseNavStyle
               }
+              end
             >
               {name}
             </NavLink>

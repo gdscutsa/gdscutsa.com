@@ -13,7 +13,7 @@ export default function TeamCard({
 }: TeamCardProps) {
   return (
     <div
-      className={`transition duration-300 hover:translate-y-0.5 hover:scale-105 w-72 h-96 flex flex-col items-center justify-center space-y-4 shadow-xl rounded bg-white border-b-4 ${
+      className={`w-72 h-96 flex flex-col items-center justify-center space-y-4 shadow-xl rounded bg-white border-b-4 ${
         accentColor ?? ' border-red-500'
       }`}
     >
