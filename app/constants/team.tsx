@@ -22,19 +22,19 @@ export const TeamMembers: TeamMember[] = [
   },
   {
     name: 'Zach True',
-    role: 'Event Coordination Lead',
+    role: 'Event Coordinator',
     image: 'assets/images/team/zach.png',
     accentColor: 'border-green-500',
   },
   {
     name: 'Julio Valdes',
-    role: 'Workshop Planning Lead',
+    role: 'Workshop Planner',
     image: 'assets/images/team/julio.jpg',
     accentColor: 'border-yellow-400',
   },
   {
     name: 'Hayden Hughes',
-    role: 'Discord Lead',
+    role: 'Communications',
     image: 'assets/images/team/hayden.png',
     accentColor: 'border-green-500',
   },
@@ -43,5 +43,11 @@ export const TeamMembers: TeamMember[] = [
     role: 'Social Media Lead',
     image: 'assets/images/team/victor.jpg',
     accentColor: 'border-blue-500',
+  },
+  {
+    name: 'Isa Molinas',
+    role: 'Web Lead',
+    image: 'assets/images/team/isa.png',
+    accentColor: 'border-red-500',
   },
 ];
