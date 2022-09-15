@@ -8,7 +8,7 @@ import {
   GITHUB_LINK,
   INSTAGRAM_LINK,
   ROWDYLINK_LINK,
-} from '~/components/links';
+} from '~/constants/links';
 
 type NavItem = {
   to: string;

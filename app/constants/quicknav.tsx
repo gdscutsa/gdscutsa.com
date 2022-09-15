@@ -1,4 +1,4 @@
-import { DISCORD_LINK } from '~/components/links';
+import { DISCORD_LINK } from '~/constants/links';
 
 export type NavItemProps =
   | {

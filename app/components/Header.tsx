@@ -2,7 +2,7 @@ import { Link, NavLink } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 import HamburgerSVG from '~/assets/HamburgerSVG';
 import { Navigation } from '~/constants/navigation';
-import { GDSC_LOGIN_LINK } from './links';
+import { GDSC_LOGIN_LINK } from '../constants/links';
 
 const baseNavStyle = ' text-gray-600';
 const baseMobileStyles = ' text-gray-600 w-full border-l-4';

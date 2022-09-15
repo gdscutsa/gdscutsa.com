@@ -1,6 +1,6 @@
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
-import { DISCORD_LINK, GDSC_INFO_LINK } from '~/components/links';
+import { DISCORD_LINK, GDSC_INFO_LINK } from '~/constants/links';
 
 export default function Index() {
   return (
