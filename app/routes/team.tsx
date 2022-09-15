@@ -13,9 +13,8 @@ export default function Team() {
             <h1 className="text-bold text-5xl text-gray-700 text-center">
               Meet the Team
             </h1>
-            <h2 className="text-lg text-gray-600 text-center">
+            <h2 className="text-lg text-gray-600 text-center max-w-lg">
               Our team is made up of passionate individuals who are dedicated to
-              <br />
               creating a positive community
             </h2>
           </div>

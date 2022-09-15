@@ -22,7 +22,8 @@ export default function TeamCard({
           accentColor ?? ' border-red-500'
         }`}
         src={image}
-      ></img>
+        alt={name}
+      />
       <h1 className="text-xl font-bold text-gray-700">{name}</h1>
       <p className="text-gray-600">{role}</p>
     </div>

@@ -11,7 +11,8 @@ export default function Footer() {
               <img
                 className="w-72 h-auto"
                 src="assets/logos/borderless.svg"
-              ></img>
+                alt="GDSC Logo"
+              />
             </Link>
           </div>
           <div className="h-full">

@@ -68,7 +68,8 @@ export default function Header() {
           <img
             className="object-contain max-w-full max-h-full pt-2"
             src="assets/logos/horizontal.svg"
-          ></img>
+            alt="GDSC Logo"
+          />
         </Link>
 
         <nav className="hidden justify-center space-x-10 md:flex md:items-end">
@@ -87,9 +88,9 @@ export default function Header() {
             </NavLink>
           ))}
 
-          <div className="">
+          <div>
             <a
-              href="https://gdsc.community.dev/the-university-of-texas-at-san-antonio/"
+              href="https://gdsc.community.dev/accounts/login/?next=/the-university-of-texas-at-san-antonio/"
               target="_blank"
               rel="noopener noreferrer"
               className="px-3 py-1.5 text-green-600 border rounded border-green-600 hover:border-green-500 hover:text-green-500"

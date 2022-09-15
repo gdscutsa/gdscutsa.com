@@ -24,6 +24,8 @@ export default function Index() {
               </p>
               <a
                 href="https://developers.google.com/community/gdsc"
+                target="_blank"
+                rel="noreferrer"
                 className="text-center shadow px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded"
               >
                 Learn More
