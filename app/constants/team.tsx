@@ -33,7 +33,7 @@ export const TeamMembers: TeamMember[] = [
     accentColor: 'border-yellow-400',
   },
   {
-    name: 'Hayden',
+    name: 'Hayden Hughes',
     role: 'Discord Lead',
     image: 'assets/images/team/hayden.png',
     accentColor: 'border-green-500',

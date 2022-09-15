@@ -1,3 +1,5 @@
+import { DISCORD_LINK } from '~/components/links';
+
 export type NavItemProps =
   | {
       to: string;
@@ -24,7 +26,7 @@ export const QuickNav: NavItemProps[] = [
   },
   { header: true, name: 'Socials and Stuff' },
   {
-    to: 'https://discord.gg/u9YSVNb6jN',
+    to: DISCORD_LINK,
     name: 'Discord',
   },
   {

@@ -3,6 +3,12 @@ import GithubSVG from '~/assets/GithubSVG';
 import InstagramSVG from '~/assets/InstagramSVG';
 import LinkedinSVG from '~/assets/LinkedinSVG';
 import YoutubeSVG from '~/assets/YoutubeSVG';
+import {
+  DISCORD_LINK,
+  GITHUB_LINK,
+  INSTAGRAM_LINK,
+  ROWDYLINK_LINK,
+} from '~/components/links';
 
 type NavItem = {
   to: string;
@@ -27,18 +33,18 @@ export const FooterNavigation: NavItem[] = [
   { to: '/events', name: 'Events' },
   { to: '/projects', name: 'Projects' },
   { to: '/team', name: 'Team' },
-  { to: 'https://rowdylink.utsa.edu/organization/gdsc', name: 'RowdyLink' },
+  { to: ROWDYLINK_LINK, name: 'RowdyLink' },
   { to: '/links', name: 'Links' },
 ];
 
 export const Socials: SocialItem[] = [
   {
-    to: 'https://discord.gg/u9YSVNb6jN',
+    to: DISCORD_LINK,
     //Need to find a better way to pass styles
     icon: <DiscordSVG className="w-5 h-auto" />,
   },
   {
-    to: 'https://www.instagram.com/gdsc.utsa/',
+    to: INSTAGRAM_LINK,
     icon: <InstagramSVG className="w-5 h-auto" />,
   },
   {
@@ -50,7 +56,7 @@ export const Socials: SocialItem[] = [
     icon: <LinkedinSVG className="w-5 h-auto" />,
   },
   {
-    to: 'https://www.github.com/gdscutsa',
+    to: GITHUB_LINK,
     icon: <GithubSVG className="w-5 h-auto" />,
   },
 ];
