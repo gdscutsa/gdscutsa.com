@@ -2,6 +2,7 @@ import { Link, NavLink } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 import HamburgerSVG from '~/assets/HamburgerSVG';
 import { Navigation } from '~/constants/navigation';
+import { GDSC_LOGIN_LINK } from './links';
 
 const baseNavStyle = ' text-gray-600';
 const baseMobileStyles = ' text-gray-600 w-full border-l-4';
@@ -90,7 +91,7 @@ export default function Header() {
 
           <div>
             <a
-              href="https://gdsc.community.dev/accounts/login/?next=/the-university-of-texas-at-san-antonio/"
+              href={GDSC_LOGIN_LINK}
               target="_blank"
               rel="noopener noreferrer"
               className="px-3 py-1.5 text-green-600 border rounded border-green-600 hover:border-green-500 hover:text-green-500"

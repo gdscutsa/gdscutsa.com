@@ -1,5 +1,6 @@
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
+import { DISCORD_LINK, GDSC_INFO_LINK } from '~/components/links';
 
 export default function Index() {
   return (
@@ -22,14 +23,24 @@ export default function Index() {
                 peer-to-peer learning environment and build solutions for local
                 businesses and their community.
               </p>
-              <a
-                href="https://developers.google.com/community/gdsc"
-                target="_blank"
-                rel="noreferrer"
-                className="text-center shadow px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded"
-              >
-                Learn More
-              </a>
+              <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-3">
+                <a
+                  href={GDSC_INFO_LINK}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-center shadow px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded"
+                >
+                  Learn More
+                </a>
+                <a
+                  href={DISCORD_LINK}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-center shadow px-4 py-2 border border-blue-500 hover:border-blue-600 text-blue-500 rounded"
+                >
+                  Keep up on Discord!
+                </a>
+              </div>
             </div>
             <div className="-order-1 md:order-1 py-10 flex flex-col justify-center items-center">
               <img src="assets/svgs/collab.svg" alt="" />
