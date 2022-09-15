@@ -16,13 +16,10 @@ export function EventCard({
           alt={name}
         />
         <div className="p-3 space-y-2">
-          <h1 className="text-blue-500 font-bold text-xl">{name}</h1>
-          <h2 className="text-sm font-semibold text-gray-600">{subtitle}</h2>
-          <p className="text-sm">{description}</p>
+          <h1 className="text-blue-500 font-bold text-2xl">{name}</h1>
+          <h2 className="text-base font-semibold text-gray-600">{subtitle}</h2>
+          <p className="text-sm text-gray-500">{description}</p>
         </div>
-        {/* <div className="flex flex-row flex-grow items-end justify-end px-3 pb-3">
-        <ExternalSVG className="w-6 h-6 fill-gray-400 transition duration-300 group:hover:translate-y-0.5 group:hover:scale-105" />
-      </div> */}
       </div>
     </a>
   );

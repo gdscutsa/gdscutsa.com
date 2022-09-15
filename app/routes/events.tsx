@@ -16,13 +16,18 @@ export default function Events() {
             </h1>
             <h2 className="text-lg text-gray-600 text-center max-w-md">
               GDSC at UTSA is commited to inspiring developers and empowering
-              students
+              students by bringing them together to learn, build, and grow.
             </h2>
           </div>
         </div>
         <div className="border-t border-gray-300 bg-white py-10">
           <div className="container mx-auto max-w-6xl flex flex-col items-center space-y-4">
-            <div className="w-full flex flex-col items-center space-y-4 border-b-2 border-gray-100 pb-10">
+            <div
+              className="w-full flex flex-col items-center space-y-4 border-gray-100 pb-10"
+              style={{
+                borderBottomWidth: PastEvents.length > 0 ? '2px' : '0px',
+              }}
+            >
               <h2 className="text-4xl p-5 w-full text-center md:text-left text-gray-700 ">
                 Upcoming Events
               </h2>
