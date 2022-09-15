@@ -16,3 +16,5 @@ export const UpcomingEvents: EventType[] = [
     eventLink: '#',
   },
 ];
+
+export const PastEvents: EventType[] = [];
