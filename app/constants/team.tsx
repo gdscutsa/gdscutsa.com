@@ -32,6 +32,7 @@ export const TeamMembers: TeamMember[] = [
   {
     name: 'Julio Valdes',
     role: 'Workshop Planner',
+    nickname: 'Discord Hater',
     image: 'assets/images/team/julio.webp',
     accentColor: 'border-yellow-400',
   },
