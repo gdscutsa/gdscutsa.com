@@ -28,11 +28,12 @@ export default function Team() {
 
               <div className="flex flex-row justify-center items-center pb-5 ">
                 <ul>
-                  {Leads.map(({ name, role, image, accentColor }) => (
+                  {Leads.map(({ name, role, nickname, image, accentColor }) => (
                     <li key={name}>
                       <TeamCard
                         name={name}
                         role={role}
+                        nickname={nickname}
                         image={image}
                         accentColor={accentColor}
                       />
@@ -47,16 +48,19 @@ export default function Team() {
               </h2>
 
               <ul className="flex flex-col items-center space-y-5 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12">
-                {TeamMembers.map(({ name, role, image, accentColor }) => (
-                  <li key={name}>
-                    <TeamCard
-                      name={name}
-                      role={role}
-                      image={image}
-                      accentColor={accentColor}
-                    />
-                  </li>
-                ))}
+                {TeamMembers.map(
+                  ({ name, role, nickname, image, accentColor }) => (
+                    <li key={name}>
+                      <TeamCard
+                        name={name}
+                        role={role}
+                        nickname={nickname}
+                        image={image}
+                        accentColor={accentColor}
+                      />
+                    </li>
+                  )
+                )}
               </ul>
             </div>
           </div>
