@@ -10,10 +10,6 @@ export default function Header() {
   const [isMenuShown, setIsMenuShown] = useState(false);
   const { pathname } = useLocation();
 
-  useEffect(() => {
-    console.log(isMenuShown);
-  }, [isMenuShown]);
-
   return (
     <header className="bg-white shadow z-10 inset-x-0 h-16">
       <div

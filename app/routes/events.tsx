@@ -9,7 +9,7 @@ export default function Events() {
     <main className="min-h-screen">
       <div className="flex flex-col h-screen justify-start">
         <Header />
-        <div className="w-full min-h-[350px] bg-no-repeat bg-left bg-cover bg-[url('/assets/images/events_background.png')] py-20 px-5 md:px-8">
+        <div className="w-full min-h-[350px] bg-no-repeat bg-left bg-cover bg-[url('/assets/images/events_background.webp')] py-20 px-5 md:px-8">
           <div className="flex flex-col items-center justify-center container mx-auto max-w-6xl h-full space-y-8 md:pl-10 p-5">
             <h1 className="text-bold text-5xl text-gray-700 text-center">
               Events
