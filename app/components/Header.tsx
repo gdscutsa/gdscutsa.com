@@ -1,14 +1,14 @@
-import { Link, NavLink } from '@remix-run/react';
+import { Link, NavLink, useLocation } from '@remix-run/react';
 import { useEffect, useState } from 'react';
 import HamburgerSVG from '~/assets/HamburgerSVG';
 import { Navigation } from '~/constants/navigation';
 import { GDSC_LOGIN_LINK } from '../constants/links';
 
 const baseNavStyle = ' text-gray-600';
-const baseMobileStyles = ' text-gray-600 w-full border-l-4';
 
 export default function Header() {
   const [isMenuShown, setIsMenuShown] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     console.log(isMenuShown);
@@ -38,21 +38,35 @@ export default function Header() {
             </svg>
           </button>
         </div>
-        <nav className="flex flex-col pb-5 border-b border-b-gray-200">
-          {Navigation.map(({ name, to }) => (
-            <NavLink
-              key={name}
-              to={to}
-              className={({ isActive }) =>
-                isActive
-                  ? baseMobileStyles + '  border-l-blue-500 p-4'
-                  : baseMobileStyles +
-                    'border-l-transparent hover:text-gray-800 p-4'
-              }
-            >
-              {name}
-            </NavLink>
-          ))}
+        <nav>
+          <ul className="flex flex-col pb-5 border-b border-b-gray-200">
+            {Navigation.map(({ name, to }) => (
+              <li
+                key={name}
+                className="border-l-4 w-full block"
+                style={{
+                  borderLeftColor:
+                    pathname === to || pathname === to + '/'
+                      ? 'rgb(59 130 246)'
+                      : 'transparent',
+                }}
+              >
+                <NavLink
+                  to={to}
+                  className="text-gray-600 w-full h-full hover:text-gray-800 p-4 block"
+                >
+                  {name}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            className="text-green-600 hover:text-green-500 pt-5 p-4 pl-5 block"
+            href={GDSC_LOGIN_LINK}
+          >
+            Register
+          </a>
         </nav>
       </div>
       <div className="container max-w-6xl mx-auto flex h-full flex-row items-center px-4 justify-between space-x-10 md:space-x-4">
@@ -74,21 +88,24 @@ export default function Header() {
         </Link>
 
         <nav className="hidden justify-center space-x-10 md:flex md:items-end">
-          {Navigation.map(({ name, to }) => (
-            <NavLink
-              key={name}
-              to={to}
-              className={({ isActive }) =>
-                isActive
-                  ? 'relative after:absolute after:w-full after:h-full after:inset-x-0 after:top-1 after:border-b-2 text-gray-700 after:border-[#4285F4]' +
-                    baseNavStyle
-                  : 'hover:text-gray-800' + baseNavStyle
-              }
-              end
-            >
-              {name}
-            </NavLink>
-          ))}
+          <ul className="flex flex-row items-center justify-center space-x-10">
+            {Navigation.map(({ name, to }) => (
+              <li key={name}>
+                <NavLink
+                  to={to}
+                  className={({ isActive }) =>
+                    isActive
+                      ? 'relative after:absolute after:w-full block after:h-full after:inset-x-0 after:top-1 after:border-b-2 text-gray-700 after:border-[#4285F4]' +
+                        baseNavStyle
+                      : 'hover:text-gray-800' + baseNavStyle
+                  }
+                  end
+                >
+                  {name}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
 
           <div>
             <a
