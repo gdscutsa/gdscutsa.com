@@ -24,6 +24,7 @@ export const Navigation: NavItem[] = [
 ];
 
 type SocialItem = {
+  name: string;
   to: string;
   icon: React.ReactNode;
 };
@@ -39,23 +40,28 @@ export const FooterNavigation: NavItem[] = [
 
 export const Socials: SocialItem[] = [
   {
+    name: 'Discord',
     to: DISCORD_LINK,
     //Need to find a better way to pass styles
     icon: <DiscordSVG className="w-5 h-auto" />,
   },
   {
+    name: 'Instagram',
     to: INSTAGRAM_LINK,
     icon: <InstagramSVG className="w-5 h-auto" />,
   },
   {
+    name: 'YouTube',
     to: '#',
     icon: <YoutubeSVG className="w-5 h-auto" />,
   },
   {
+    name: 'LinkedIn',
     to: '#',
     icon: <LinkedinSVG className="w-5 h-auto" />,
   },
   {
+    name: 'GitHub',
     to: GITHUB_LINK,
     icon: <GithubSVG className="w-5 h-auto" />,
   },

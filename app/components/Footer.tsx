@@ -35,8 +35,9 @@ export default function Footer() {
               Socials
             </h1>
             <ul className="flex flex-row items-center space-x-4">
-              {Socials.map(({ to, icon }) => (
+              {Socials.map(({ name, to, icon }) => (
                 <li key={to}>
+                  <span className="sr-only">{name}</span>
                   <a
                     className="fill-gray-500 hover:fill-blue-500"
                     href={to}
