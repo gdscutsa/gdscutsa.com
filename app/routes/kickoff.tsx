@@ -63,10 +63,8 @@ export default function Links() {
           </div>
         </div>
       </div>
-      {/* <Link to="/" className="text-lg p-5">
-        @gdsc.utsa
-      </Link> */}
-      <div className="md:hidden mt-5 flex-grow w-full h-full bg-no-repeat bg-contain md:bg-[length:638px_308px] bg-right-top bg-[url('/assets/images/beanbag.webp')]"></div>
+
+      <div className="md:hidden mt-5 flex-grow w-full h-full bg-no-repeat bg-cover bg-clip-content md:bg-[length:638px_308px] bg-right-top bg-[url('/assets/images/beanbag.webp')]"></div>
     </main>
   );
 }
