@@ -19,50 +19,54 @@ function QuickLink({ to, children }: QuickLinkProps) {
 
 export default function Links() {
   return (
-    <main className="flex min-h-screen px-5 flex-col justify-start bg-no-repeat bg-contain md:bg-[length:638px_308px] h-auto bg-[right_bottom_3rem] items-center bg-[url('/assets/images/beanbag.webp')]">
-      <div className="max-w-lg container pt-10 md:pt-20 space-y-6">
-        <Link to={'/'}>
-          <img
-            className="object-cover"
-            src="assets/logos/horizontal.svg"
-            alt="GDSC UTSA"
-          />
-        </Link>
+    <main className="flex min-h-screen flex-col justify-start h-auto items-center md:bg-no-repeat md:bg-[length:638px_308px] md:bg-right-bottom md:bg-[url('/assets/images/beanbag.webp')]">
+      <div className="px-5">
+        <div className="max-w-lg container pt-10 md:pt-20 space-y-6">
+          <Link to={'/'}>
+            <img
+              className="object-cover"
+              src="assets/logos/horizontal.svg"
+              alt="GDSC UTSA"
+            />
+          </Link>
 
-        <h1 className="text-5xl font-bold text-gray-700">Kickoff!</h1>
-        <div>
-          <h2 className="text-xl font-bold text-gray-700">
-            Sept 28, 2022 | 1PM - SU 2.01.12 Willow
-          </h2>
-          <h3 className="text-lg text-gray-600">Student Union Second Floor</h3>
-        </div>
+          <h1 className="text-5xl font-bold text-gray-700">Kickoff!</h1>
+          <div>
+            <h2 className="text-xl font-bold text-gray-700">
+              Sept 28, 2022 | 1PM - SU 2.01.12 Willow
+            </h2>
+            <h3 className="text-lg text-gray-600">
+              Student Union Second Floor
+            </h3>
+          </div>
 
-        <p>
-          Come join us for our first event of the UTSA GDSC chapter! Find out
-          what we are and who we are at this joint GDSC x ACM event!
-        </p>
+          <p>
+            Come join us for our first event of the UTSA GDSC chapter! Find out
+            what we are and who we are at this joint GDSC x ACM event!
+          </p>
 
-        <div className="space-y-4">
-          {KickoffQuickNav.map((link) =>
-            'header' in link ? (
-              <h2
-                key={link.name}
-                className="text-xl font-semibold pt-2 text-center"
-              >
-                {link.name}
-              </h2>
-            ) : (
-              <QuickLink key={link.to} to={link.to}>
-                {link.name}
-              </QuickLink>
-            )
-          )}
+          <div className="space-y-4">
+            {KickoffQuickNav.map((link) =>
+              'header' in link ? (
+                <h2
+                  key={link.name}
+                  className="text-xl font-semibold pt-2 text-center"
+                >
+                  {link.name}
+                </h2>
+              ) : (
+                <QuickLink key={link.to} to={link.to}>
+                  {link.name}
+                </QuickLink>
+              )
+            )}
+          </div>
         </div>
       </div>
-      <div className="flex-grow p-5"></div>
-      <Link to="/" className="text-lg p-5">
+      {/* <Link to="/" className="text-lg p-5">
         @gdsc.utsa
-      </Link>
+      </Link> */}
+      <div className="md:hidden mt-5 flex-grow w-full h-full bg-no-repeat bg-contain md:bg-[length:638px_308px] bg-right-top bg-[url('/assets/images/beanbag.webp')]"></div>
     </main>
   );
 }
