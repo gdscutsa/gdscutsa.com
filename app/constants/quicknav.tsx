@@ -38,3 +38,18 @@ export const QuickNav: NavItemProps[] = [
     name: 'GitHub',
   },
 ];
+
+export const KickoffQuickNav: NavItemProps[] = [
+  {
+    to: 'https://forms.gle/3nUbtT1rX2h5S7iR9',
+    name: 'RSVP',
+  },
+  {
+    to: DISCORD_LINK,
+    name: 'Discord',
+  },
+  {
+    to: '/',
+    name: 'Our Website',
+  },
+];
