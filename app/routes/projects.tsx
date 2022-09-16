@@ -1,5 +1,14 @@
+import { MetaFunction } from '@remix-run/cloudflare';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
+import { SEO_DESCRIPTION } from '~/constants/seo';
+
+export const meta: MetaFunction = () => ({
+  charset: 'utf-8',
+  title: 'GDSC | UTSA - Projects Page',
+  viewport: 'width=device-width,initial-scale=1',
+  description: SEO_DESCRIPTION,
+});
 
 export default function Projects() {
   return (

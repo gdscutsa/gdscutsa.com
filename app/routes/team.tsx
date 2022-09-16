@@ -1,7 +1,17 @@
+import { MetaFunction } from '@remix-run/cloudflare';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
 import TeamCard from '~/components/TeamCard';
+import { SEO_DESCRIPTION } from '~/constants/seo';
 import { Leads, TeamMembers } from '~/constants/team';
+
+export const meta: MetaFunction = () => ({
+  charset: 'utf-8',
+  title: 'GDSC | UTSA - Our Team',
+  viewport: 'width=device-width,initial-scale=1',
+  description:
+    'Our team is made up of passionate individuals who are dedicated to creating a positive community',
+});
 
 export default function Team() {
   return (

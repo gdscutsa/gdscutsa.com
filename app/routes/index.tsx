@@ -1,6 +1,15 @@
+import { MetaFunction } from '@remix-run/cloudflare';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
 import { DISCORD_LINK, GDSC_INFO_LINK } from '~/constants/links';
+import { SEO_DESCRIPTION } from '~/constants/seo';
+
+export const meta: MetaFunction = () => ({
+  charset: 'utf-8',
+  title: 'GDSC | UTSA - Home Page',
+  viewport: 'width=device-width,initial-scale=1',
+  description: SEO_DESCRIPTION,
+});
 
 export default function Index() {
   return (
@@ -43,7 +52,7 @@ export default function Index() {
               </div>
             </div>
             <div className="-order-1 md:order-1 py-10 flex flex-col justify-center items-center">
-              <img src="assets/svgs/collab.svg" alt="" />
+              <img src="assets/svgs/collab.svg" alt="People collaborating" />
             </div>
           </div>
         </div>

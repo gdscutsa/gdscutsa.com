@@ -8,7 +8,7 @@ import {
   ScrollRestoration,
   useCatch,
 } from '@remix-run/react';
-import { META_DESCRIPTION } from './constants/seo';
+import { SEO_DESCRIPTION } from './constants/seo';
 
 import tailwindStylesheetUrl from './styles/tailwind.css';
 
@@ -20,7 +20,7 @@ export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'GDSC | UTSA',
   viewport: 'width=device-width,initial-scale=1',
-  description: META_DESCRIPTION,
+  description: SEO_DESCRIPTION,
 });
 
 export default function App() {
