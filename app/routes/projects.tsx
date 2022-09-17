@@ -28,7 +28,6 @@ export default function Projects() {
             </div>
           </div>
         </div>
-        <div className="flex-grow"></div>
         <Footer />
       </div>
     </main>

@@ -56,7 +56,7 @@ export default function Index() {
             </div>
           </div>
         </div>
-        <div className="flex-grow"></div>
+        {/* <div className="flex-grow"></div>  */}
         <Footer />
       </div>
     </main>

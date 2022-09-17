@@ -18,7 +18,7 @@ export default function Team() {
     <main className="min-h-screen">
       <div className="flex flex-col h-screen justify-start">
         <Header />
-        <div className="w-full min-h-[350px] bg-no-repeat bg-center bg-contain  bg-[url('/assets/images/team_background.webp')] py-20 px-5 md:px-8">
+        <div className="w-full min-h-[350px] bg-no-repeat bg-center bg-cover bg-[url('/assets/images/team_background.webp')] py-20 px-5 md:px-8">
           <div className="flex flex-col items-center justify-center container mx-auto max-w-6xl h-full space-y-10">
             <h1 className="text-bold text-5xl text-gray-700 text-center">
               Meet the Team
