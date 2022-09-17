@@ -33,7 +33,7 @@ export default function Links() {
           <h1 className="text-5xl font-bold text-gray-700">Kickoff!</h1>
           <div>
             <h2 className="text-xl font-bold text-gray-700">
-              Sept 28, 2022 | 1PM - SU 2.01.12 Willow
+              Sept 28, 2022 | 1PM - SU 2.02.12 Willow
             </h2>
             <h3 className="text-lg text-gray-600">
               Student Union Second Floor
