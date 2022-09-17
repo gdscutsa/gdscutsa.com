@@ -13,7 +13,7 @@ export const UpcomingEvents: EventType[] = [
     description:
       'Come join us for our first event of the chapter! Find out what we are and who we are at this joint GDSC x ACM event!',
     image: 'assets/images/projects_background.webp',
-    eventLink: '#',
+    eventLink: 'https://gdsc.community.dev/e/mcg6um/',
   },
 ];
 
