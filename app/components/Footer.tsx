@@ -51,8 +51,9 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="text-gray-500 text-xs text-center md:text-left ">
-          © {new Date().getFullYear()} GDSC at UTSA
+        <div className="flex flex-col space-y-1 sm:space-y-0 sm:flex-row justify-between text-gray-500 text-xs text-center md:text-left ">
+          <p>© {new Date().getFullYear()} GDSC at UTSA</p>
+          <p>Made with ❤️ by the GDSC Team</p>
         </div>
       </div>
     </footer>
