@@ -1,5 +1,14 @@
+import { MetaFunction } from '@remix-run/cloudflare';
 import { Link } from '@remix-run/react';
 import { KickoffQuickNav, QuickNav } from '~/constants/quicknav';
+import { SEO_DESCRIPTION } from '~/constants/seo';
+
+export const meta: MetaFunction = () => ({
+  charset: 'utf-8',
+  title: 'GDSC | UTSA - Kickoff!',
+  viewport: 'width=device-width,initial-scale=1',
+  description: SEO_DESCRIPTION,
+});
 
 type QuickLinkProps = {
   to: string;

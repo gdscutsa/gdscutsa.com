@@ -1,10 +1,19 @@
+import { MetaFunction } from '@remix-run/cloudflare';
 import { Link } from '@remix-run/react';
 import { QuickNav } from '~/constants/quicknav';
+import { SEO_DESCRIPTION } from '~/constants/seo';
 
 type QuickLinkProps = {
   to: string;
   children: React.ReactNode;
 };
+
+export const meta: MetaFunction = () => ({
+  charset: 'utf-8',
+  title: 'GDSC | UTSA - Quick Links',
+  viewport: 'width=device-width,initial-scale=1',
+  description: SEO_DESCRIPTION,
+});
 
 function QuickLink({ to, children }: QuickLinkProps) {
   return (
