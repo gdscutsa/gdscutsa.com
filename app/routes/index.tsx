@@ -90,7 +90,7 @@ export default function Index() {
                   rel="noreferrer"
                   className="text-center shadow px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded"
                 >
-                  RSVP
+                  More Info
                 </a>
               </div>
             </div>
