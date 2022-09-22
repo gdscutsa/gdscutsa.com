@@ -41,7 +41,7 @@ export const QuickNav: NavItemProps[] = [
 
 export const KickoffQuickNav: NavItemProps[] = [
   {
-    to: 'https://forms.gle/3nUbtT1rX2h5S7iR9',
+    to: 'https://gdsc.community.dev/e/mcg6um/',
     name: 'RSVP',
   },
   {
