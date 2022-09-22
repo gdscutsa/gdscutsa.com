@@ -16,7 +16,7 @@ export default function Index() {
     <main className="min-h-screen">
       <div className="flex flex-col h-screen justify-start">
         <Header />
-        <div className="w-full bg-center bg-no-repeat bg-cover bg-[url('/assets/images/home_background.webp')] py-20 px-5 md:px-8">
+        <section className="w-full bg-center bg-no-repeat bg-cover bg-[url('/assets/images/home_background.webp')] py-20 px-5 md:px-8">
           <div className="flex flex-col items-center justify-center container mx-auto max-w-6xl h-full md:grid md:gap-8 md:grid-cols-2 space-y-10">
             <div className="flex flex-col justify-center items-center md:items-start space-y-6 md:text-left text-center">
               <h1 className="text-4xl text-gray-700">
@@ -55,7 +55,47 @@ export default function Index() {
               <img src="assets/svgs/collab.svg" alt="People collaborating" />
             </div>
           </div>
-        </div>
+        </section>
+        {/* <div className="flex flex-col items-center justify-center md:items-start container mx-auto max-w-6xl h-full py-20">
+          <h2 className="text-5xl text-green-600 font-bold">Kickoff!</h2>
+        </div> */}
+        <section className="w-full py-20 px-5 md:px-8">
+          <div className="flex flex-col items-center justify-center container mx-auto max-w-6xl h-full md:grid md:gap-8 md:grid-cols-2 space-y-10 md:space-y-0">
+            <div className="flex flex-col justify-center items-center">
+              <img
+                className="rounded-full"
+                src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_3,f_auto,g_center,h_150,q_auto:good,w_150/v1/gcs/platform-data-dsc/event_banners/gdev-eccosystems-bevy-chapters-thumbnail_CWNBE37.png"
+                alt="GDSC Logo"
+                width="300px"
+              />
+            </div>
+            <div className="flex flex-col justify-center items-center md:items-start space-y-6 md:text-left text-center">
+              <h1 className="text-5xl font-bold text-green-600">Kickoff!</h1>
+              <div>
+                <h2 className="text-xl font-bold text-gray-700">
+                  Sept 28, 2022 | 1PM - SU 2.02.12 Willow
+                </h2>
+                <h3 className="text-lg text-gray-600">
+                  Student Union Second Floor
+                </h3>
+              </div>
+              <p className="text-gray-600">
+                Come join us for our first event of the chapter! Find out what
+                we are and who we are at this joint GDSC x ACM event!
+              </p>
+              <div className="flex flex-col md:flex-row space-y-3 md:space-x-3">
+                <a
+                  href="https://gdsc.community.dev/e/mcg6um/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-center shadow px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded"
+                >
+                  RSVP
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* <div className="flex-grow"></div>  */}
         <Footer />
       </div>
