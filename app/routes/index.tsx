@@ -1,4 +1,5 @@
-import { MetaFunction } from '@remix-run/cloudflare';
+import { json, LoaderFunction, MetaFunction } from '@remix-run/cloudflare';
+import { useLoaderData } from '@remix-run/react';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
 import { DISCORD_LINK, GDSC_INFO_LINK } from '~/constants/links';
@@ -11,7 +12,14 @@ export const meta: MetaFunction = () => ({
   description: SEO_DESCRIPTION,
 });
 
+export const loader: LoaderFunction = ({ context }) => {
+  return json({ context });
+};
+
 export default function Index() {
+  const { context } = useLoaderData();
+  console.log(context);
+
   return (
     <main className="min-h-screen">
       <div className="flex flex-col h-screen justify-start">
