@@ -13,7 +13,7 @@ export const meta: MetaFunction = () => ({
 });
 
 export const loader: LoaderFunction = ({ context }) => {
-  return json({ context: context, test: CONTENTFUL_SPACE_ID });
+  return json({ context: context, test: CF_PAGES });
 };
 
 export default function Index() {
