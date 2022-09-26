@@ -22,8 +22,9 @@ type LoaderData = {
 export const loader: LoaderFunction = async ({ context }) => {
   //Hacky way to get the space and token from the context
   const upcoming = await client.getUpcomingEvents(
-    context.CONTENTFUL_SPACE_ID as string,
-    context.CONTENTFUL_ACCESS_TOKEN as string
+    process?.env.CONTENTFUL_SPACE_ID ?? (context.CONTENTFUL_SPACE_ID as string),
+    process?.env.CONTENTFUL_ACCESS_ID ??
+      (context.CONTENTFUL_ACCESS_TOKEN as string)
   );
   const past = await client.getPastEvents(
     context.CONTENTFUL_SPACE_ID as string,
