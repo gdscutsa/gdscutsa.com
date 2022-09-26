@@ -5,6 +5,8 @@ import Header from '~/components/Header';
 import { DISCORD_LINK, GDSC_INFO_LINK } from '~/constants/links';
 import { SEO_DESCRIPTION } from '~/constants/seo';
 
+declare var CF_PAGES: string;
+
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'GDSC | UTSA - Home Page',
