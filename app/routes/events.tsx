@@ -1,9 +1,11 @@
-import { MetaFunction } from '@remix-run/cloudflare';
+import { json, LoaderFunction, MetaFunction } from '@remix-run/cloudflare';
+import { useLoaderData } from '@remix-run/react';
+import invariant from 'tiny-invariant';
 import { EventCard } from '~/components/EventCard';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
-import { PastEvents, UpcomingEvents } from '~/constants/events';
 import { SEO_DESCRIPTION } from '~/constants/seo';
+import { client } from '~/models/contentful.server';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -12,7 +14,33 @@ export const meta: MetaFunction = () => ({
   description: SEO_DESCRIPTION,
 });
 
+type LoaderData = {
+  upcomingEvents: Awaited<ReturnType<typeof client.getUpcomingEvents>>;
+  pastEvents: Awaited<ReturnType<typeof client.getPastEvents>>;
+};
+
+export const loader: LoaderFunction = async ({ context }) => {
+  //Hacky way to get the space and token from the context
+  const upcoming = await client.getUpcomingEvents(
+    context.CONTENTFUL_SPACE_ID as string,
+    context.CONTENTFUL_ACCESS_TOKEN as string
+  );
+  const past = await client.getPastEvents(
+    context.CONTENTFUL_SPACE_ID as string,
+    context.CONTENTFUL_ACCESS_TOKEN as string
+  );
+
+  console.log(context);
+
+  return json<LoaderData>({
+    upcomingEvents: upcoming,
+    pastEvents: past,
+  });
+};
+
 export default function Events() {
+  const { upcomingEvents, pastEvents } = useLoaderData<LoaderData>();
+
   return (
     <main className="min-h-screen">
       <div className="flex flex-col h-screen justify-start">
@@ -33,7 +61,7 @@ export default function Events() {
             <div
               className="w-full flex flex-col items-center space-y-4 border-gray-100 pb-10"
               style={{
-                borderBottomWidth: PastEvents.length > 0 ? '2px' : '0px',
+                borderBottomWidth: upcomingEvents.length > 0 ? '2px' : '0px',
               }}
             >
               <h2 className="text-4xl p-5 w-full text-center md:text-left text-gray-700 ">
@@ -41,22 +69,22 @@ export default function Events() {
               </h2>
 
               <ul className="flex flex-col items-center space-y-5 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12">
-                {UpcomingEvents.map((event) => (
-                  <li key={event.title}>
+                {upcomingEvents.map((event) => (
+                  <li key={event.name}>
                     <EventCard {...event} />
                   </li>
                 ))}
               </ul>
             </div>
-            {PastEvents.length > 0 ? (
+            {pastEvents.length > 0 ? (
               <div className="w-full flex flex-col items-center space-y-4">
                 <h2 className="text-4xl p-5 w-full text-center md:text-left text-gray-700">
                   Past Events
                 </h2>
 
                 <ul className="flex flex-col items-center space-y-5 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12">
-                  {UpcomingEvents.map((event) => (
-                    <li key={event.title}>
+                  {pastEvents.map((event) => (
+                    <li key={event.name}>
                       <EventCard {...event} />
                     </li>
                   ))}
