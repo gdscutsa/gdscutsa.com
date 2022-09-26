@@ -13,12 +13,13 @@ export const meta: MetaFunction = () => ({
 });
 
 export const loader: LoaderFunction = ({ context }) => {
-  return json({ context });
+  return json({ process: process.env, context: context });
 };
 
 export default function Index() {
-  const { context } = useLoaderData();
+  const { context, process } = useLoaderData();
   console.log(context);
+  console.log(process);
 
   return (
     <main className="min-h-screen">
