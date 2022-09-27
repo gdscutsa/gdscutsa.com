@@ -20,7 +20,6 @@ type LoaderData = {
 };
 
 export const loader: LoaderFunction = async ({ context }) => {
-  console.log(context);
   //Hacky way to get the space and token from the context
   const upcoming = await client.getUpcomingEvents(
     context.CONTENTFUL_SPACE_ID as string,
@@ -30,8 +29,6 @@ export const loader: LoaderFunction = async ({ context }) => {
     context.CONTENTFUL_SPACE_ID as string,
     context.CONTENTFUL_ACCESS_TOKEN as string
   );
-
-  console.log(context);
 
   return json<LoaderData>({
     upcomingEvents: upcoming,
@@ -62,20 +59,25 @@ export default function Events() {
             <div
               className="w-full flex flex-col items-center space-y-4 border-gray-100 pb-10"
               style={{
-                borderBottomWidth: upcomingEvents.length > 0 ? '2px' : '0px',
+                borderBottomWidth: pastEvents.length > 0 ? '2px' : '0px',
               }}
             >
               <h2 className="text-4xl p-5 w-full text-center md:text-left text-gray-700 ">
                 Upcoming Events
               </h2>
-
-              <ul className="flex flex-col items-center space-y-5 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12">
-                {upcomingEvents.map((event) => (
-                  <li key={event.name}>
-                    <EventCard {...event} />
-                  </li>
-                ))}
-              </ul>
+              {upcomingEvents.length > 0 ? (
+                <ul className="p-5 flex flex-col items-center space-y-5 md:space-y-0 md:grid md:grid-cols-2 md:gap-12 lg:grid-cols-3">
+                  {upcomingEvents.map((event) => (
+                    <li key={event.name}>
+                      <EventCard {...event} />
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-2xl px-12 w-full text-center md:text-left text-gray-500">
+                  No upcoming events at the moment. Check back later!
+                </p>
+              )}
             </div>
             {pastEvents.length > 0 ? (
               <div className="w-full flex flex-col items-center space-y-4">
@@ -83,7 +85,7 @@ export default function Events() {
                   Past Events
                 </h2>
 
-                <ul className="flex flex-col items-center space-y-5 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12">
+                <ul className="p-5 flex flex-col items-center space-y-5 md:space-y-0 md:grid md:grid-cols-2 md:gap-12 lg:grid-cols-3">
                   {pastEvents.map((event) => (
                     <li key={event.name}>
                       <EventCard {...event} />

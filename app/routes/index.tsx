@@ -12,14 +12,7 @@ export const meta: MetaFunction = () => ({
   description: SEO_DESCRIPTION,
 });
 
-export const loader: LoaderFunction = async ({ context }) => {
-  return context;
-};
-
 export default function Index() {
-  const context = useLoaderData();
-  console.log(context);
-
   return (
     <main className="min-h-screen">
       <div className="flex flex-col h-screen justify-start">
