@@ -12,14 +12,13 @@ export const meta: MetaFunction = () => ({
   description: SEO_DESCRIPTION,
 });
 
-export const loader: LoaderFunction = ({ context }) => {
-  return json({ context: context });
+export const loader: LoaderFunction = async ({ context }) => {
+  return context;
 };
 
 export default function Index() {
-  const { context } = useLoaderData();
+  const context = useLoaderData();
   console.log(context);
-  console.log(context.CONTENTFUL_SPACE_ID);
 
   return (
     <main className="min-h-screen">
