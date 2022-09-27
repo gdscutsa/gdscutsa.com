@@ -19,6 +19,7 @@ export const loader: LoaderFunction = ({ context }) => {
 export default function Index() {
   const { context } = useLoaderData();
   console.log(context);
+  console.log(context.CONTENTFUL_SPACE_ID);
 
   return (
     <main className="min-h-screen">
