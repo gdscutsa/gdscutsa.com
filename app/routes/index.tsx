@@ -1,4 +1,5 @@
-import { MetaFunction } from '@remix-run/cloudflare';
+import { json, LoaderFunction, MetaFunction } from '@remix-run/cloudflare';
+import { useLoaderData } from '@remix-run/react';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
 import { DISCORD_LINK, GDSC_INFO_LINK } from '~/constants/links';
