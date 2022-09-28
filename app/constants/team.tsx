@@ -25,7 +25,7 @@ export const TeamMembers: TeamMember[] = [
   {
     name: 'Zach True',
     role: 'Event Coordinator',
-    nickname: 'Mr. Asbestos',
+    nickname: 'the_milkman_42',
     image: 'assets/images/team/zach.webp',
     accentColor: 'border-green-500',
   },
@@ -46,6 +46,7 @@ export const TeamMembers: TeamMember[] = [
   {
     name: 'Victor Garcia',
     role: 'Social Media Lead',
+    nickname: '🎂',
     image: 'assets/images/team/victor.webp',
     accentColor: 'border-blue-500',
   },
@@ -55,5 +56,11 @@ export const TeamMembers: TeamMember[] = [
     nickname: 'Swagmaster',
     image: 'assets/images/team/isa.webp',
     accentColor: 'border-red-500',
+  },
+  {
+    name: 'Lena Haifa',
+    role: 'Creative Lead',
+    image: 'assets/images/team/lena.webp',
+    accentColor: 'border-yellow-500',
   },
 ];
