@@ -57,9 +57,7 @@ export default function Index() {
             </div>
           </div>
         </section>
-        {/* <div className="flex flex-col items-center justify-center md:items-start container mx-auto max-w-6xl h-full py-20">
-          <h2 className="text-5xl text-green-600 font-bold">Kickoff!</h2>
-        </div> */}
+        {/*      
         <section className="w-full py-20 px-5 md:px-8">
           <div className="flex flex-col items-center justify-center container mx-auto max-w-6xl h-full md:grid md:gap-8 md:grid-cols-2 space-y-10 md:space-y-0">
             <div className="flex flex-col justify-center items-center">
@@ -96,7 +94,7 @@ export default function Index() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
         {/* <div className="flex-grow"></div>  */}
         <Footer />
       </div>
