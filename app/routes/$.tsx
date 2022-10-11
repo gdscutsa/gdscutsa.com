@@ -1,7 +1,9 @@
-import { MetaFunction } from '@remix-run/cloudflare';
-import { Link } from '@remix-run/react';
-import { KickoffQuickNav, QuickNav } from '~/constants/quicknav';
+import { json, LoaderFunction, MetaFunction } from '@remix-run/cloudflare';
+import { Link, useLoaderData } from '@remix-run/react';
+import { DISCORD_LINK } from '~/constants/links';
+import { KickoffQuickNav, NavItemProps, QuickNav } from '~/constants/quicknav';
 import { SEO_DESCRIPTION } from '~/constants/seo';
+import { client, EventType } from '~/models/contentful.server';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -13,6 +15,32 @@ export const meta: MetaFunction = () => ({
 type QuickLinkProps = {
   to: string;
   children: React.ReactNode;
+};
+
+type LoaderData = {
+  event: EventType;
+};
+
+export const loader: LoaderFunction = async ({ params, context }) => {
+  if (!params['*'] || params['*'] === '') {
+    throw new Response('Not Found', {
+      status: 404,
+    });
+  }
+
+  const event = await client.getEventBySlug(
+    context.CONTENTFUL_SPACE_ID as string,
+    context.CONTENTFUL_ACCESS_TOKEN as string,
+    params['*']
+  );
+
+  if (event.length === 0) {
+    throw new Response('Not Found', {
+      status: 404,
+    });
+  }
+
+  return json<LoaderData>({ event: event[0] });
 };
 
 function QuickLink({ to, children }: QuickLinkProps) {
@@ -27,6 +55,27 @@ function QuickLink({ to, children }: QuickLinkProps) {
 }
 
 export default function Links() {
+  const {
+    event: { name, location, date, endDate, desc, eventLink },
+  } = useLoaderData<LoaderData>();
+
+  const dateObj = new Date(date);
+
+  const Links: NavItemProps[] = [
+    {
+      to: eventLink,
+      name: 'RSVP',
+    },
+    {
+      to: DISCORD_LINK,
+      name: 'Discord',
+    },
+    {
+      to: '/',
+      name: 'Our Website',
+    },
+  ];
+
   return (
     <main className="flex min-h-screen flex-col justify-start h-auto items-center md:bg-no-repeat md:bg-[length:638px_308px] md:bg-right-bottom md:bg-[url('/assets/images/beanbag.webp')]">
       <div className="px-5">
@@ -39,23 +88,28 @@ export default function Links() {
             />
           </Link>
 
-          <h1 className="text-5xl font-bold text-gray-700">Kickoff!</h1>
+          <h1 className="text-5xl font-bold text-gray-700">{name}</h1>
           <div>
             <h2 className="text-xl font-bold text-gray-700">
-              Sept 28, 2022 | 1PM - SU 2.02.12 Willow
+              {/* Sept 28, 2022 | 1PM - SU 2.02.12 Willow */}
+              {`${dateObj.toLocaleDateString('en-us', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })} - ${dateObj.toLocaleTimeString('en-us', {
+                hour: 'numeric',
+                minute: 'numeric',
+              })} | ${location}`}
             </h2>
             <h3 className="text-lg text-gray-600">
-              Student Union Second Floor
+              {/* Student Union Second Floor */}
             </h3>
           </div>
 
-          <p>
-            Come join us for our first event of the UTSA GDSC chapter! Find out
-            what we are and who we are at this joint GDSC x ACM event!
-          </p>
+          <p>{desc}</p>
 
           <div className="space-y-4">
-            {KickoffQuickNav.map((link) =>
+            {Links.map((link) =>
               'header' in link ? (
                 <h2
                   key={link.name}
