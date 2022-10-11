@@ -5,6 +5,5 @@ export type EventType = {
   desc: string;
   img: string;
   imgAlt: string;
-  eventLink: string;
-  isPast: boolean;
+  eventLink?: string;
 };

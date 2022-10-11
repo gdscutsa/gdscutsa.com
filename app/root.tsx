@@ -1,4 +1,8 @@
-import type { LinksFunction, MetaFunction } from '@remix-run/cloudflare';
+import type {
+  LinksFunction,
+  LoaderFunction,
+  MetaFunction,
+} from '@remix-run/cloudflare';
 import {
   Links,
   LiveReload,
@@ -9,6 +13,7 @@ import {
   useCatch,
 } from '@remix-run/react';
 import { SEO_DESCRIPTION } from './constants/seo';
+import { setContext } from './context.server';
 
 import tailwindStylesheetUrl from './styles/tailwind.css';
 
@@ -22,6 +27,11 @@ export const meta: MetaFunction = () => ({
   viewport: 'width=device-width,initial-scale=1',
   description: SEO_DESCRIPTION,
 });
+
+export const loader: LoaderFunction = async ({ context }) => {
+  setContext(context);
+  return null;
+};
 
 export default function App() {
   return (

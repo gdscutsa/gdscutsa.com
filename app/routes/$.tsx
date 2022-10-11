@@ -28,11 +28,7 @@ export const loader: LoaderFunction = async ({ params, context }) => {
     });
   }
 
-  const event = await client.getEventBySlug(
-    context.CONTENTFUL_SPACE_ID as string,
-    context.CONTENTFUL_ACCESS_TOKEN as string,
-    params['*']
-  );
+  const event = await client.getEventBySlug(params['*']);
 
   if (event.length === 0) {
     throw new Response('Not Found', {

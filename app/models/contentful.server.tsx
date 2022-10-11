@@ -1,25 +1,28 @@
-async function apiCall(
-  space: string,
-  token: string,
-  query: string,
-  variables?: string
-) {
-  const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${space}/environments/master`;
+import { getContext } from '~/context.server';
+
+async function apiCall(query: string, variables?: string) {
+  const context = getContext();
+
+  const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${context['CONTENTFUL_SPACE_ID']}/environments/master`;
   const options = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${token}`,
+      Authorization: `Bearer ${context['CONTENTFUL_ACCESS_TOKEN']}`,
     },
     body: JSON.stringify({ query, variables }),
   };
   return await fetch(fetchUrl, options);
 }
 
-export async function getUpcomingEvents(space: string, token: string) {
+export async function getUpcomingEvents() {
+  const context = getContext();
+
   const query = `
   {
-    eventCollection(order: date_DESC, where: {endDate_gte: "${new Date().toISOString()}"}) {
+    eventCollection(preview: ${
+      context.ENV !== 'production'
+    }, order: date_DESC, where: {endDate_gte: "${new Date().toISOString()}"}) {
       items {
         name
         location
@@ -34,7 +37,7 @@ export async function getUpcomingEvents(space: string, token: string) {
     }
   
 }`;
-  const response = await apiCall(space, token, query);
+  const response = await apiCall(query);
   const json: any = await response.json();
   const formattedData = await json.data.eventCollection.items.map(
     async (project: {
@@ -62,10 +65,14 @@ export async function getUpcomingEvents(space: string, token: string) {
   return Promise.all(formattedData);
 }
 
-export async function getPastEvents(space: string, token: string) {
+export async function getPastEvents() {
+  const context = getContext();
+
   const query = `
   {
-    eventCollection(order: date_DESC, where: {endDate_lt: "${new Date().toISOString()}"}) {
+    eventCollection(preview: ${
+      context.ENV !== 'production'
+    },order: date_DESC, where: {endDate_lt: "${new Date().toISOString()}"}) {
       items {
         name
         location
@@ -80,7 +87,7 @@ export async function getPastEvents(space: string, token: string) {
     }
   
 }`;
-  const response = await apiCall(space, token, query);
+  const response = await apiCall(query);
   const json: any = await response.json();
   const formattedData = await json.data.eventCollection.items.map(
     async (project: {
@@ -119,15 +126,14 @@ export type EventType = {
   isPast: boolean;
 };
 
-export async function getEventBySlug(
-  space: string,
-  token: string,
-  slug: string
-): Promise<EventType[]> {
+export async function getEventBySlug(slug: string): Promise<EventType[]> {
+  const context = getContext();
+
   const query = `
   {
-    
-    eventCollection(where: {slug: "${slug}", endDate_gte: "${new Date().toISOString()}"}) {
+    eventCollection(preview: ${
+      context.ENV !== 'production'
+    },where: {slug: "${slug}", endDate_gte: "${new Date().toISOString()}"}) {
       items {
           name
           location
@@ -139,7 +145,7 @@ export async function getEventBySlug(
     }
   }`;
 
-  const response = await apiCall(space, token, query);
+  const response = await apiCall(query);
   const json: any = await response.json();
   const formattedData = await json.data.eventCollection.items.map(
     async (project: {
