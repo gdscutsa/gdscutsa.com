@@ -2,7 +2,6 @@ import type { MetaFunction } from '@remix-run/cloudflare';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
 import TeamCard from '~/components/TeamCard';
-import { SEO_DESCRIPTION } from '~/constants/seo';
 import { Leads, TeamMembers } from '~/constants/team';
 
 export const meta: MetaFunction = () => ({

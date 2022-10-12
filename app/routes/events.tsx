@@ -1,7 +1,6 @@
 import type { LoaderFunction, MetaFunction } from '@remix-run/cloudflare';
 import { json } from '@remix-run/cloudflare';
 import { useLoaderData } from '@remix-run/react';
-import invariant from 'tiny-invariant';
 import { EventCard } from '~/components/EventCard';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';

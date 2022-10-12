@@ -2,8 +2,7 @@ import type { LoaderFunction, MetaFunction } from '@remix-run/cloudflare';
 import { json } from '@remix-run/cloudflare';
 import { Link, useLoaderData } from '@remix-run/react';
 import { DISCORD_LINK } from '~/constants/links';
-import type { NavItemProps} from '~/constants/quicknav';
-import { KickoffQuickNav, QuickNav } from '~/constants/quicknav';
+import type { NavItemProps } from '~/constants/quicknav';
 import { SEO_DESCRIPTION } from '~/constants/seo';
 import type { EventType } from '~/models/contentful.server';
 import { client } from '~/models/contentful.server';
@@ -55,7 +54,7 @@ function QuickLink({ to, children }: QuickLinkProps) {
 
 export default function Links() {
   const {
-    event: { name, location, date, endDate, desc, eventLink },
+    event: { name, location, date, desc, eventLink },
   } = useLoaderData<LoaderData>();
 
   const dateObj = new Date(date);

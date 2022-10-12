@@ -1,5 +1,5 @@
 import { Link } from '@remix-run/react';
-import { FooterNavigation, Navigation, Socials } from '~/constants/navigation';
+import { FooterNavigation, Socials } from '~/constants/navigation';
 
 export default function Footer() {
   return (

@@ -10,7 +10,6 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useCatch,
 } from '@remix-run/react';
 import { SEO_DESCRIPTION } from './constants/seo';
 import { setContext } from './context.server';

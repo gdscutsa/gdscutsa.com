@@ -1,8 +1,7 @@
 import { Link, NavLink, useLocation } from '@remix-run/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import HamburgerSVG from '~/assets/HamburgerSVG';
 import { Navigation } from '~/constants/navigation';
-import { GDSC_LOGIN_LINK } from '../constants/links';
 
 const baseNavStyle = ' text-gray-600';
 
@@ -57,12 +56,12 @@ export default function Header() {
             ))}
           </ul>
 
-          <a
+          <Link
             className="text-green-600 hover:text-green-500 pt-5 p-4 pl-5 block"
-            href={GDSC_LOGIN_LINK}
+            to="/apply"
           >
-            Register
-          </a>
+            Apply!
+          </Link>
         </nav>
       </div>
       <div className="container max-w-6xl mx-auto flex h-full flex-row items-center px-4 justify-between space-x-10 md:space-x-4">
@@ -104,14 +103,12 @@ export default function Header() {
           </ul>
 
           <div>
-            <a
-              href={GDSC_LOGIN_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/apply"
               className="px-3 py-1.5 text-green-600 border rounded border-green-600 hover:border-green-500 hover:text-green-500"
             >
-              Register
-            </a>
+              Apply
+            </Link>
           </div>
         </nav>
       </div>

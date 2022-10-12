@@ -24,7 +24,7 @@ export default function Projects() {
               </p>
             </div>
             <div className="hidden md:flex py-10  flex-col justify-center items-center">
-              <img src="assets/svgs/scrum.svg" alt="Image of a Scrum Meeting" />
+              <img src="assets/svgs/scrum.svg" alt="Scrum Meeting" />
             </div>
           </div>
         </div>
