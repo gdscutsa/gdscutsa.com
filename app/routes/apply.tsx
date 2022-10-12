@@ -4,7 +4,7 @@ import Header from '~/components/Header';
 import { TypeWriter } from '~/components/Typewriter';
 import { SEO_DESCRIPTION } from '~/constants/seo';
 
-import buttonStylesheetUrl from '~/styles/button.css';
+import rainbowStylesheetUrl from '~/styles/rainbow.css';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -14,7 +14,7 @@ export const meta: MetaFunction = () => ({
 });
 
 export const links: LinksFunction = () => {
-  return [{ rel: 'stylesheet', href: buttonStylesheetUrl }];
+  return [{ rel: 'stylesheet', href: rainbowStylesheetUrl }];
 };
 
 export default function Apply() {
@@ -23,8 +23,8 @@ export default function Apply() {
       <div className="flex flex-col h-screen justify-start">
         <Header />
         <img
-          src="/assets/images/activity.jpeg"
-          className="h-[350px] grayscale object-cover object-center"
+          src="/assets/images/activity.webp"
+          className="h-[350px] w-full grayscale object-cover object-center"
           alt="kickoff event"
         ></img>
         <section className="w-full pt-12 pb-8 px-5 md:px-8">
