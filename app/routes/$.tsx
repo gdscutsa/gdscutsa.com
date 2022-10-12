@@ -1,9 +1,12 @@
-import { json, LoaderFunction, MetaFunction } from '@remix-run/cloudflare';
+import type { LoaderFunction, MetaFunction } from '@remix-run/cloudflare';
+import { json } from '@remix-run/cloudflare';
 import { Link, useLoaderData } from '@remix-run/react';
 import { DISCORD_LINK } from '~/constants/links';
-import { KickoffQuickNav, NavItemProps, QuickNav } from '~/constants/quicknav';
+import type { NavItemProps} from '~/constants/quicknav';
+import { KickoffQuickNav, QuickNav } from '~/constants/quicknav';
 import { SEO_DESCRIPTION } from '~/constants/seo';
-import { client, EventType } from '~/models/contentful.server';
+import type { EventType } from '~/models/contentful.server';
+import { client } from '~/models/contentful.server';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',

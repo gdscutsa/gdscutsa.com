@@ -1,4 +1,4 @@
-import { MetaFunction } from '@remix-run/cloudflare';
+import type { MetaFunction } from '@remix-run/cloudflare';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
 import TeamCard from '~/components/TeamCard';

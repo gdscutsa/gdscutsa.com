@@ -1,4 +1,4 @@
-import { MetaFunction } from '@remix-run/cloudflare';
+import type { MetaFunction } from '@remix-run/cloudflare';
 import { Link } from '@remix-run/react';
 import { QuickNav } from '~/constants/quicknav';
 import { SEO_DESCRIPTION } from '~/constants/seo';

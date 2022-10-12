@@ -1,4 +1,4 @@
-import { EventType } from '~/constants/events';
+import type { EventType } from '~/constants/events';
 
 export function EventCard({
   name,
