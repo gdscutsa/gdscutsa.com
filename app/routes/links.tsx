@@ -1,4 +1,4 @@
-import { MetaFunction } from '@remix-run/cloudflare';
+import type { MetaFunction } from '@remix-run/cloudflare';
 import { Link } from '@remix-run/react';
 import { QuickNav } from '~/constants/quicknav';
 import { SEO_DESCRIPTION } from '~/constants/seo';
@@ -18,7 +18,7 @@ export const meta: MetaFunction = () => ({
 function QuickLink({ to, children }: QuickLinkProps) {
   return (
     <a
-      className="drop-shadow-md transition ease-in-out hover:-translate-y-1 hover:scale-105 duration-150 max-w-lg p-3 rounded-xl bg-blue-500 flex justify-center text-white text-lg"
+      className="flex max-w-lg justify-center rounded-xl bg-blue-500 p-3 text-lg text-white drop-shadow-md transition duration-150 ease-in-out hover:-translate-y-1 hover:scale-105"
       href={to}
     >
       {children}
@@ -28,10 +28,10 @@ function QuickLink({ to, children }: QuickLinkProps) {
 
 export default function Links() {
   return (
-    <main className="flex min-h-screen px-3 flex-col justify-start items-center">
-      <div className="max-w-lg container pt-10 md:pt-20">
+    <main className="flex min-h-screen flex-col items-center justify-start px-3">
+      <div className="container max-w-lg pt-10 md:pt-20">
         <img
-          className="object-cover p-4 mb-6"
+          className="mb-6 object-cover p-4"
           src="assets/logos/borderless.svg"
           alt="GDSC UTSA"
         />
@@ -41,7 +41,7 @@ export default function Links() {
             'header' in link ? (
               <h2
                 key={link.name}
-                className="text-xl font-semibold pt-2 text-center"
+                className="pt-2 text-center text-xl font-semibold"
               >
                 {link.name}
               </h2>
@@ -54,7 +54,7 @@ export default function Links() {
         </div>
       </div>
       <div className="flex-grow p-5"></div>
-      <Link to="/" className="text-lg p-5">
+      <Link to="/" className="p-5 text-lg">
         @gdsc.utsa
       </Link>
     </main>

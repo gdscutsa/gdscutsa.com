@@ -1,0 +1,35 @@
+.text-rainbow {
+  background: linear-gradient(90deg, #498af4, #eb4a3d, #fbbc04, #0f9d58);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  /* display: inline-block; */
+}
+
+.btn {
+  position: relative;
+  z-index: 1;
+}
+
+.btn::before {
+  display: block;
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 0.25rem;
+  padding: 2px;
+  background: linear-gradient(
+    90deg,
+    #498af4 0%,
+    #eb4a3d 20.83%,
+    #fbbc04 46.35%,
+    #0f9d58 81.25%
+  );
+  pointer-events: none;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}

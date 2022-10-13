@@ -1,8 +1,8 @@
 import { Link, NavLink, useLocation } from '@remix-run/react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import HamburgerSVG from '~/assets/HamburgerSVG';
+import { GDSC_LOGIN_LINK } from '~/constants/links';
 import { Navigation } from '~/constants/navigation';
-import { GDSC_LOGIN_LINK } from '../constants/links';
 
 const baseNavStyle = ' text-gray-600';
 
@@ -11,22 +11,22 @@ export default function Header() {
   const { pathname } = useLocation();
 
   return (
-    <header className="bg-white shadow z-10 inset-x-0 h-16">
+    <header className="inset-x-0 z-10 h-16 bg-white shadow">
       <div
-        className="fixed transition-all duration-300 ease-in-out md:hidden top-0 bottom-0 min-w-[300px] bg-white shadow"
+        className="fixed top-0 bottom-0 min-w-[300px] bg-white shadow transition-all duration-300 ease-in-out md:hidden"
         style={{
           left: isMenuShown ? '0' : '-100%',
         }}
       >
-        <div className="flex flex-row w-full justify-end items-center py-8 px-5">
+        <div className="flex w-full flex-row items-center justify-end py-8 px-5">
           <button
             onClick={() => {
               setIsMenuShown(false);
             }}
-            className="absolute w-6 h-6 fill-gray-400"
+            className="absolute h-6 w-6 fill-gray-400"
           >
             <svg
-              className="w-full h-full"
+              className="h-full w-full"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 320 512"
             >
@@ -35,11 +35,11 @@ export default function Header() {
           </button>
         </div>
         <nav>
-          <ul className="flex flex-col pb-5 border-b border-b-gray-200">
+          <ul className="flex flex-col border-b border-b-gray-200 pb-5">
             {Navigation.map(({ name, to }) => (
               <li
                 key={name}
-                className="border-l-4 w-full block"
+                className="block w-full border-l-4"
                 style={{
                   borderLeftColor:
                     pathname === to || pathname === to + '/'
@@ -49,7 +49,7 @@ export default function Header() {
               >
                 <NavLink
                   to={to}
-                  className="text-gray-600 w-full h-full hover:text-gray-800 p-4 block"
+                  className="block h-full w-full p-4 text-gray-600 hover:text-gray-800"
                 >
                   {name}
                 </NavLink>
@@ -58,26 +58,26 @@ export default function Header() {
           </ul>
 
           <a
-            className="text-green-600 hover:text-green-500 pt-5 p-4 pl-5 block"
+            className="block p-4 pt-5 pl-5 text-green-600 hover:text-green-500"
             href={GDSC_LOGIN_LINK}
           >
             Register
           </a>
         </nav>
       </div>
-      <div className="container max-w-6xl mx-auto flex h-full flex-row items-center px-4 justify-between space-x-10 md:space-x-4">
+      <div className="container mx-auto flex h-full max-w-6xl flex-row items-center justify-between space-x-10 px-4 md:space-x-4">
         <button
           onClick={() => {
             setIsMenuShown(true);
           }}
-          className="md:hidden w-6 h-6 fill-gray-400"
+          className="h-6 w-6 fill-gray-400 md:hidden"
         >
           <HamburgerSVG className="h-full w-full" />
         </button>
 
-        <Link className="object-contain w-full h-full pt-2" to="/">
+        <Link className="h-full w-full object-contain pt-2" to="/">
           <img
-            className="object-contain max-w-full max-h-full pt-2"
+            className="max-h-full max-w-full object-contain pt-2"
             src="assets/logos/horizontal.svg"
             alt="GDSC Logo"
           />
@@ -91,7 +91,7 @@ export default function Header() {
                   to={to}
                   className={({ isActive }) =>
                     isActive
-                      ? 'relative after:absolute after:w-full block after:h-full after:inset-x-0 after:top-1 after:border-b-2 text-gray-700 after:border-[#4285F4]' +
+                      ? 'relative block text-gray-700 after:absolute after:inset-x-0 after:top-1 after:h-full after:w-full after:border-b-2 after:border-[#4285F4]' +
                         baseNavStyle
                       : 'hover:text-gray-800' + baseNavStyle
                   }
@@ -106,9 +106,7 @@ export default function Header() {
           <div>
             <a
               href={GDSC_LOGIN_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-1.5 text-green-600 border rounded border-green-600 hover:border-green-500 hover:text-green-500"
+              className="rounded border border-green-600 px-3 py-1.5 text-green-600 hover:border-green-500 hover:text-green-500"
             >
               Register
             </a>

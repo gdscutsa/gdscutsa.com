@@ -1,9 +1,11 @@
-import { json, LoaderFunction, MetaFunction } from '@remix-run/cloudflare';
+import type { LoaderFunction, MetaFunction } from '@remix-run/cloudflare';
+import { json } from '@remix-run/cloudflare';
 import { Link, useLoaderData } from '@remix-run/react';
 import { DISCORD_LINK } from '~/constants/links';
-import { KickoffQuickNav, NavItemProps, QuickNav } from '~/constants/quicknav';
+import type { NavItemProps } from '~/constants/quicknav';
 import { SEO_DESCRIPTION } from '~/constants/seo';
-import { client, EventType } from '~/models/contentful.server';
+import type { EventType } from '~/models/contentful.server';
+import { client } from '~/models/contentful.server';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -28,11 +30,7 @@ export const loader: LoaderFunction = async ({ params, context }) => {
     });
   }
 
-  const event = await client.getEventBySlug(
-    context.CONTENTFUL_SPACE_ID as string,
-    context.CONTENTFUL_ACCESS_TOKEN as string,
-    params['*']
-  );
+  const event = await client.getEventBySlug(params['*']);
 
   if (event.length === 0) {
     throw new Response('Not Found', {
@@ -46,7 +44,7 @@ export const loader: LoaderFunction = async ({ params, context }) => {
 function QuickLink({ to, children }: QuickLinkProps) {
   return (
     <a
-      className="drop-shadow-md transition ease-in-out hover:-translate-y-1 hover:scale-105 duration-150 max-w-lg p-3 rounded-xl bg-blue-500 flex justify-center text-white text-lg"
+      className="flex max-w-lg justify-center rounded-xl bg-blue-500 p-3 text-lg text-white drop-shadow-md transition duration-150 ease-in-out hover:-translate-y-1 hover:scale-105"
       href={to}
     >
       {children}
@@ -56,7 +54,7 @@ function QuickLink({ to, children }: QuickLinkProps) {
 
 export default function Links() {
   const {
-    event: { name, location, date, endDate, desc, eventLink },
+    event: { name, location, date, desc, eventLink },
   } = useLoaderData<LoaderData>();
 
   const dateObj = new Date(date);
@@ -77,9 +75,9 @@ export default function Links() {
   ];
 
   return (
-    <main className="flex min-h-screen flex-col justify-start h-auto items-center md:bg-no-repeat md:bg-[length:638px_308px] md:bg-right-bottom md:bg-[url('/assets/images/beanbag.webp')]">
+    <main className="flex h-auto min-h-screen flex-col items-center justify-start md:bg-[url('/assets/images/beanbag.webp')] md:bg-[length:638px_308px] md:bg-right-bottom md:bg-no-repeat">
       <div className="px-5">
-        <div className="max-w-lg container pt-10 md:pt-20 space-y-6">
+        <div className="container max-w-lg space-y-6 pt-10 md:pt-20">
           <Link to={'/'}>
             <img
               className="object-cover"
@@ -113,7 +111,7 @@ export default function Links() {
               'header' in link ? (
                 <h2
                   key={link.name}
-                  className="text-xl font-semibold pt-2 text-center"
+                  className="pt-2 text-center text-xl font-semibold"
                 >
                   {link.name}
                 </h2>
@@ -127,7 +125,7 @@ export default function Links() {
         </div>
       </div>
 
-      <div className="md:hidden mt-5 flex-grow w-full h-full bg-no-repeat bg-cover bg-clip-content md:bg-[length:638px_308px] bg-right-top bg-[url('/assets/images/beanbag.webp')]"></div>
+      <div className="mt-5 h-full w-full flex-grow bg-[url('/assets/images/beanbag.webp')] bg-cover bg-clip-content bg-right-top bg-no-repeat md:hidden md:bg-[length:638px_308px]"></div>
     </main>
   );
 }
