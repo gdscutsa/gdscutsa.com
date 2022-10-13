@@ -23,8 +23,6 @@ type LoaderData = {
 export const loader: LoaderFunction = async ({ context }) => {
   setContext(context);
 
-  console.log(getContext());
-
   const upcoming = await client.getUpcomingEvents();
   const past = await client.getPastEvents();
 
