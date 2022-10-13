@@ -58,7 +58,7 @@ export default function Index() {
             </div>
           </div>
         </section>
-        <section className="w-full bg-slate-50 py-20 px-5 md:px-8">
+        <section className="w-full bg-slate-100 py-20 px-5 md:px-8">
           <div className="container mx-auto max-w-6xl">
             <h1 className="text-2xl font-medium text-gray-500">
               At Google Student Developer Clubs UTSA,
