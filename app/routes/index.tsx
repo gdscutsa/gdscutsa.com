@@ -19,7 +19,7 @@ export default function Index() {
       <div className="flex h-screen flex-col justify-start">
         <Header />
         <section className="w-ful px-5 pb-20 md:py-32 md:px-8">
-          <div className="container mx-auto flex h-full max-w-6xl flex-col items-center justify-center space-y-10 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
+          <div className="container mx-auto flex h-full max-w-6xl flex-col items-start justify-start space-y-10 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
             <div className="flex flex-col items-center justify-center space-y-6 text-center md:items-start md:text-left">
               <h1 className="text-4xl text-gray-700">
                 Google Developer Student Clubs{' '}
@@ -53,8 +53,20 @@ export default function Index() {
                 </a>
               </div>
             </div>
-            <div className="-order-1 flex flex-col items-center justify-center py-10 md:order-1 md:py-0">
+            <div className="-order-1 flex flex-col items-end justify-center py-8 md:order-1 md:py-0">
               <img src="assets/images/banner.webp" alt="GDSC Banner" />
+              <p className="pt-1 text-xs text-slate-400">
+                Artwork by{' '}
+                <a
+                  className="text-blue-400 hover:text-blue-500"
+                  href="https://www.svnflowerdays.net/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Lena Haifa
+                </a>
+                !
+              </p>
             </div>
           </div>
         </section>
