@@ -43,7 +43,7 @@ export default function Apply() {
                 </span>{' '}
                 Our mission is to empower future developers by bringing students
                 passionate about technology together and helping them grow their
-                skills in tech, no matter what their background is.
+                skills in tech, regardless of background.
               </div>
               <div>
                 <h3 className="text-rainbow font-bold">Our Values</h3>
