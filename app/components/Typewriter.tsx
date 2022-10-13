@@ -28,7 +28,10 @@ export const TypeWriter = ({
   useEffect(() => {
     setIndex(0);
     setDisplayedContent('');
-    ref.current?.style.setProperty('width', measureText(ref, content) + 'px');
+    ref.current?.style.setProperty(
+      'width',
+      measureText(ref, content) + 4 + 'px'
+    );
 
     const animKey = setInterval(() => {
       setIndex((index) => {

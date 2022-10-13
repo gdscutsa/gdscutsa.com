@@ -11,6 +11,32 @@ export const meta: MetaFunction = () => ({
   description: SEO_DESCRIPTION,
 });
 
+function ApplicationCard({
+  title,
+  description,
+  link,
+  color,
+}: {
+  title: string;
+  description: string;
+  link: string;
+  color: string;
+}) {
+  return (
+    <a href={link}>
+      <div
+        className={`group relative flex min-h-[200px] w-80 flex-col bg-white shadow-xl transition duration-300 before:absolute before:-right-1.5 before:top-[0.1875rem] before:h-full before:w-1.5 before:skew-y-[45deg] before:bg-${color}-500 before:content-[''] after:absolute after:left-[0.1875rem] after:-bottom-1.5 after:h-1.5 after:w-full after:skew-x-[45deg] after:bg-${color}-500 after:content-[''] hover:translate-y-0.5 hover:scale-105`}
+      >
+        <div className="space-y-2 p-4">
+          <h1 className={`text-2xl font-bold text-${color}-500`}>{title}</h1>
+
+          <p className="text-sm text-gray-500">{description}</p>
+        </div>
+      </div>
+    </a>
+  );
+}
+
 export default function Apply() {
   return (
     <main className="min-h-screen">
@@ -21,7 +47,7 @@ export default function Apply() {
           className="h-[350px] w-full object-cover object-center grayscale"
           alt="kickoff event"
         ></img>
-        <section className="w-full px-5 pt-12 pb-8 md:px-8">
+        <section className="relative w-full px-5 pt-12 pb-8 after:absolute after:left-0 after:bottom-0 after:h-1.5 after:w-full after:bg-gradient-to-r after:from-blue-500 after:to-red-500 md:px-8">
           <div className="container mx-auto max-w-6xl">
             <h1 className="text-2xl font-medium text-gray-400">
               At Google Student Developer Clubs UTSA,
@@ -58,35 +84,23 @@ export default function Apply() {
           </div>
         </section>
 
-        <section className="w-full bg-slate-50 py-12 px-5 md:px-8">
+        <section className="w-full bg-slate-100 py-12 px-5 md:px-8">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-xl font-semibold ">Open Applications</h2>
             <div className="flex w-full flex-col items-center gap-4 px-6 py-6 sm:flex-row md:items-start md:px-0">
-              <a href="https://forms.gle/q966WJLmmjsBcijL9">
-                <div className="group flex min-h-[200px] w-80 flex-col rounded border-b-4 border-red-500 bg-white shadow-xl transition duration-300 hover:translate-y-0.5 hover:scale-105">
-                  <div className="space-y-2 p-4">
-                    <h1 className="text-2xl font-bold text-red-500">Officer</h1>
-
-                    <p className="text-sm text-gray-500">
-                      Do you want to lead a community? Join our officer team!
-                    </p>
-                  </div>
-                </div>
-              </a>
-              <a href="https://forms.gle/s7af1Le7KhKEMws56">
-                <div className="group flex min-h-[200px] w-80 flex-col rounded border-b-4 border-blue-500 bg-white shadow-xl transition duration-300 hover:translate-y-0.5 hover:scale-105">
-                  <div className="space-y-2 p-4">
-                    <h1 className="text-2xl font-bold text-blue-500">
-                      Subcommittee
-                    </h1>
-
-                    <p className="text-sm text-gray-500">
-                      Do you want to be apart of a team and help run workshops?
-                      Join a subcommittee and help us grow our community!
-                    </p>
-                  </div>
-                </div>
-              </a>
+              <ApplicationCard
+                title="Officer"
+                description="Do you want to lead a community? Join our officer team!"
+                link="https://forms.gle/q966WJLmmjsBcijL9"
+                color="red"
+              />
+              <ApplicationCard
+                title="Subcommittee"
+                description="Do you want to be apart of a team and help run workshops?
+                Join a subcommittee and help us grow our community!"
+                link="https://forms.gle/s7af1Le7KhKEMws56"
+                color="blue"
+              />
             </div>
           </div>
         </section>
