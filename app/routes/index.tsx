@@ -1,5 +1,5 @@
-import { json, LoaderFunction, MetaFunction } from '@remix-run/cloudflare';
-import { Link, useLoaderData } from '@remix-run/react';
+import type { MetaFunction } from '@remix-run/cloudflare';
+import { Link } from '@remix-run/react';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
 import { TypeWriter } from '~/components/Typewriter';
@@ -19,8 +19,8 @@ export default function Index() {
       <div className="flex h-screen flex-col justify-start">
         <Header />
         <section className="w-full py-20 px-5 md:px-8">
-          <div className="container mx-auto flex h-full max-w-6xl flex-col items-center justify-center space-y-10 md:grid md:grid-cols-2 md:gap-8">
-            <div className="flex flex-col items-center justify-center space-y-6 text-center md:items-start md:space-y-0 md:text-left">
+          <div className="container mx-auto flex h-full max-w-6xl flex-col items-center justify-center space-y-10 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
+            <div className="flex flex-col items-center justify-center space-y-6 text-center md:items-start md:text-left">
               <h1 className="text-4xl text-gray-700">
                 Google Developer Student Clubs{' '}
                 <span className="font-bold">UTSA</span>
@@ -39,7 +39,7 @@ export default function Index() {
                   href={GDSC_INFO_LINK}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded bg-blue-500 px-4 py-2 text-center text-white shadow hover:bg-blue-600"
+                  className="rounded bg-blue-500 px-4 py-2 text-center text-white shadow transition duration-150 ease-in-out hover:-translate-y-0.5 hover:scale-105"
                 >
                   Learn More
                 </a>
@@ -47,14 +47,14 @@ export default function Index() {
                   href={DISCORD_LINK}
                   target="_blank"
                   rel="noreferrer"
-                  className="rounded border border-blue-500 px-4 py-2 text-center text-blue-500 shadow hover:border-blue-600"
+                  className="rounded border border-blue-500 px-4 py-2 text-center text-blue-500 shadow transition duration-150 ease-in-out hover:-translate-y-0.5 hover:scale-105"
                 >
                   Keep up on Discord!
                 </a>
               </div>
             </div>
             <div className="-order-1 flex flex-col items-center justify-center py-10 md:order-1">
-              <img src="assets/images/banner.jpg" alt="People collaborating" />
+              <img src="assets/images/banner.webp" alt="GDSC Banner" />
             </div>
           </div>
         </section>
@@ -77,23 +77,10 @@ export default function Index() {
                 <span className="font-bold">
                   We're built different, so we build different.
                 </span>{' '}
-                Our mission is to bring together students who are passionate
-                about technology and help them grow their skills and knowledge.
+                Our mission is to empower future developers by bringing students
+                passionate about technology together and helping them grow their
+                skills in tech, no matter what their background is.
               </div>
-              {/* <div>
-                <img
-                  src="assets/images/event.jpg"
-                  className="grayscale w-full max-h-[250px] object-cover"
-                  alt="kickoff event"
-                />
-              </div> */}
-              {/* <div>
-                <img
-                  src="assets/images/banner.jpg"
-                  className="grayscale-0 w-auto max-h-[250px] object-fit object-center"
-                  alt="kickoff event"
-                />
-              </div> */}
               <div>
                 <h3 className="text-rainbow font-bold">Our Values</h3>
                 We believe you don't need to code to be a developer. We develop
@@ -103,6 +90,13 @@ export default function Index() {
                   Dreamers, problem solvers, and tinkerers: That's who we are.
                 </span>
               </div>
+              <div className="-order-1 md:order-none">
+                <img
+                  src="assets/images/event.webp"
+                  className="max-h-[250px] w-full object-cover grayscale"
+                  alt="kickoff event"
+                />
+              </div>
               <div>
                 <h3 className="text-rainbow font-bold">Events</h3>
                 <p>
@@ -110,16 +104,12 @@ export default function Index() {
                   workshops to competitions. Networking events to socials. We
                   have something for everyone!
                 </p>
-                <Link to="/events" className="btn mt-5 inline-block py-2 px-3">
+                <Link
+                  to="/events"
+                  className="btn mt-5 inline-block py-2 px-3 transition duration-150 ease-in-out hover:-translate-y-0.5 hover:scale-105"
+                >
                   See Events
                 </Link>
-              </div>
-              <div>
-                <img
-                  src="assets/images/event.jpg"
-                  className="max-h-[250px] w-full object-cover grayscale"
-                  alt="kickoff event"
-                />
               </div>
             </div>
           </div>

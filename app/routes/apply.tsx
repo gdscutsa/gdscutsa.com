@@ -1,4 +1,4 @@
-import type { LinksFunction, MetaFunction } from '@remix-run/cloudflare';
+import type { MetaFunction } from '@remix-run/cloudflare';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
 import { TypeWriter } from '~/components/Typewriter';
@@ -29,26 +29,27 @@ export default function Apply() {
             <h2 className="leading-right text-4xl font-bold">
               We develop{' '}
               <TypeWriter
-                content={'communities'}
+                content={'leaders'}
                 className="text-rainbow inline-block"
                 speed={150}
               />
             </h2>
             <h3 className="py-3 text-xl font-bold">Applications are open!</h3>
-            <div className="grid grid-cols-1 gap-5 py-8 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-8 py-8 md:grid-cols-2">
               <div>
                 <h3 className="text-rainbow font-bold">Our Mission</h3>
                 <span className="font-bold">
                   We're built different, so we build different.
                 </span>{' '}
-                Our mission is to bring together students who are passionate
-                about technology and help them grow their skills and knowledge.
+                Our mission is to empower future developers by bringing students
+                passionate about technology together and helping them grow their
+                skills in tech, no matter what their background is.
               </div>
               <div>
                 <h3 className="text-rainbow font-bold">Our Values</h3>
                 We believe you don't need to code to be a developer. We develop
                 both products and people by making Google technologies
-                accessible to everyone though workshops, events, and more.{' '}
+                accessible to everyone through workshops, events, and more.{' '}
                 <span className="font-bold">
                   Dreamers, problem solvers, and tinkerers: That's who we are.
                 </span>
