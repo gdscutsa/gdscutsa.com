@@ -5,6 +5,7 @@ import { EventCard } from '~/components/EventCard';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
 import { SEO_DESCRIPTION } from '~/constants/seo';
+import { getContext, setContext } from '~/context.server';
 import { client } from '~/models/contentful.server';
 
 export const meta: MetaFunction = () => ({
@@ -19,7 +20,9 @@ type LoaderData = {
   pastEvents: Awaited<ReturnType<typeof client.getPastEvents>>;
 };
 
-export const loader: LoaderFunction = async () => {
+export const loader: LoaderFunction = async ({ context }) => {
+  setContext(context);
+
   const upcoming = await client.getUpcomingEvents();
   const past = await client.getPastEvents();
 
@@ -28,6 +31,15 @@ export const loader: LoaderFunction = async () => {
     pastEvents: past,
   });
 };
+
+// export function ErrorBoundary() {
+//   return (
+//     <div className="flex h-screen flex-col items-center justify-center">
+//       <h1 className="text-4xl text-gray-700">Something went wrong!</h1>
+//       <p className="text-gray-600">Please try again later.</p>
+//     </div>
+//   );
+// }
 
 export default function Events() {
   const { upcomingEvents, pastEvents } = useLoaderData<LoaderData>();

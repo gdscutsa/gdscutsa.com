@@ -18,7 +18,7 @@ export default function Index() {
     <main className="min-h-screen">
       <div className="flex h-screen flex-col justify-start">
         <Header />
-        <section className="w-full py-20 px-5 md:px-8">
+        <section className="w-ful px-5 pb-20 md:py-32 md:px-8">
           <div className="container mx-auto flex h-full max-w-6xl flex-col items-center justify-center space-y-10 md:grid md:grid-cols-2 md:gap-8 md:space-y-0">
             <div className="flex flex-col items-center justify-center space-y-6 text-center md:items-start md:text-left">
               <h1 className="text-4xl text-gray-700">
@@ -53,12 +53,12 @@ export default function Index() {
                 </a>
               </div>
             </div>
-            <div className="-order-1 flex flex-col items-center justify-center py-10 md:order-1">
+            <div className="-order-1 flex flex-col items-center justify-center py-10 md:order-1 md:py-0">
               <img src="assets/images/banner.webp" alt="GDSC Banner" />
             </div>
           </div>
         </section>
-        <section className="w-full bg-slate-50 py-20 px-5 md:px-8">
+        <section className="w-full bg-slate-100 py-20 px-5 md:px-8">
           <div className="container mx-auto max-w-6xl">
             <h1 className="text-2xl font-medium text-gray-500">
               At Google Student Developer Clubs UTSA,

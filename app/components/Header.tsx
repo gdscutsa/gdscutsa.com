@@ -75,9 +75,9 @@ export default function Header() {
           <HamburgerSVG className="h-full w-full" />
         </button>
 
-        <Link className="h-full w-full object-contain pt-2" to="/">
+        <Link className="pt-2" to="/">
           <img
-            className="max-h-full max-w-full object-contain pt-2"
+            className="h-[60px] w-auto object-contain pt-2"
             src="assets/logos/horizontal.svg"
             alt="GDSC Logo"
           />

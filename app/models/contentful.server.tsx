@@ -3,12 +3,15 @@ import { getContext } from '~/context.server';
 async function apiCall(query: string, variables?: string) {
   const context = getContext();
 
-  const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${context['CONTENTFUL_SPACE_ID']}/environments/master`;
+  const fetchUrl = `https://graphql.contentful.com/content/v1/spaces/${
+    context.CONTENTFUL_SPACE_ID as string
+  }/environments/master`;
+  console.log(fetchUrl);
   const options = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `Bearer ${context['CONTENTFUL_ACCESS_TOKEN']}`,
+      Authorization: `Bearer ${context.CONTENTFUL_ACCESS_TOKEN as string}`,
     },
     body: JSON.stringify({ query, variables }),
   };
