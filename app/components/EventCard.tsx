@@ -13,14 +13,14 @@ export function EventCard({
 
   return (
     <a href={eventLink}>
-      <div className="flex flex-col w-80 min-h-[500px] shadow-xl rounded-md group bg-white transition duration-300 hover:translate-y-0.5 hover:scale-105">
+      <div className="group flex min-h-[500px] w-80 flex-col rounded-md bg-white shadow-xl transition duration-300 hover:translate-y-0.5 hover:scale-105">
         <img
-          className="w-full h-[250px] object-cover object-center rounded-t"
+          className="h-[250px] w-full rounded-t object-cover object-center"
           src={img}
           alt={imgAlt}
         />
-        <div className="p-3 space-y-2">
-          <h1 className="text-blue-500 font-bold text-2xl">{name}</h1>
+        <div className="space-y-2 p-3">
+          <h1 className="text-2xl font-bold text-blue-500">{name}</h1>
           <h2 className="text-base font-semibold text-gray-600">{`${dateObj.toLocaleDateString(
             'en-us',
             {

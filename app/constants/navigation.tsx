@@ -43,26 +43,26 @@ export const Socials: SocialItem[] = [
     name: 'Discord',
     to: DISCORD_LINK,
     //Need to find a better way to pass styles
-    icon: <DiscordSVG className="w-5 h-auto" />,
+    icon: <DiscordSVG className="h-auto w-5" />,
   },
   {
     name: 'Instagram',
     to: INSTAGRAM_LINK,
-    icon: <InstagramSVG className="w-5 h-auto" />,
+    icon: <InstagramSVG className="h-auto w-5" />,
   },
   {
     name: 'YouTube',
     to: '#',
-    icon: <YoutubeSVG className="w-5 h-auto" />,
+    icon: <YoutubeSVG className="h-auto w-5" />,
   },
   {
     name: 'LinkedIn',
     to: '#',
-    icon: <LinkedinSVG className="w-5 h-auto" />,
+    icon: <LinkedinSVG className="h-auto w-5" />,
   },
   {
     name: 'GitHub',
     to: GITHUB_LINK,
-    icon: <GithubSVG className="w-5 h-auto" />,
+    icon: <GithubSVG className="h-auto w-5" />,
   },
 ];

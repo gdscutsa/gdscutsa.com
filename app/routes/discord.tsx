@@ -1,4 +1,4 @@
-import type { LoaderFunction} from '@remix-run/cloudflare';
+import type { LoaderFunction } from '@remix-run/cloudflare';
 import { redirect } from '@remix-run/cloudflare';
 import { DISCORD_LINK } from '~/constants/links';
 

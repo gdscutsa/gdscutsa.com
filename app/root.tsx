@@ -15,9 +15,13 @@ import { SEO_DESCRIPTION } from './constants/seo';
 import { setContext } from './context.server';
 
 import tailwindStylesheetUrl from './styles/tailwind.css';
+import globalStylesheetUrl from '~/styles/global.css';
 
 export const links: LinksFunction = () => {
-  return [{ rel: 'stylesheet', href: tailwindStylesheetUrl }];
+  return [
+    { rel: 'stylesheet', href: tailwindStylesheetUrl },
+    { rel: 'stylesheet', href: globalStylesheetUrl },
+  ];
 };
 
 export const meta: MetaFunction = () => ({

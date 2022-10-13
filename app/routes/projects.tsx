@@ -13,17 +13,17 @@ export const meta: MetaFunction = () => ({
 export default function Projects() {
   return (
     <main className="min-h-screen">
-      <div className="flex flex-col h-screen justify-start">
+      <div className="flex h-screen flex-col justify-start">
         <Header />
-        <div className="w-full bg-center bg-no-repeat min-h-[500px] bg-cover bg-[url('/assets/images/projects_background.webp')] py-8 px-5 md:px-8">
-          <div className="flex flex-col items-center justify-center container mx-auto max-w-6xl h-full md:grid md:gap-6 md:grid-cols-2 md:space-y-0 space-y-10">
-            <div className="flex flex-col justify-center items-center md:items-start space-y-6 md:text-left text-center">
+        <div className="min-h-[500px] w-full bg-[url('/assets/images/projects_background.webp')] bg-cover bg-center bg-no-repeat py-8 px-5 md:px-8">
+          <div className="container mx-auto flex h-full max-w-6xl flex-col items-center justify-center space-y-10 md:grid md:grid-cols-2 md:gap-6 md:space-y-0">
+            <div className="flex flex-col items-center justify-center space-y-6 text-center md:items-start md:text-left">
               <h1 className="text-6xl font-medium text-white">Projects</h1>
               <p className="text-xl text-white">
                 Our club is cooking up a few projects. Check back soon!
               </p>
             </div>
-            <div className="hidden md:flex py-10  flex-col justify-center items-center">
+            <div className="hidden flex-col items-center  justify-center py-10 md:flex">
               <img src="assets/svgs/scrum.svg" alt="Scrum Meeting" />
             </div>
           </div>
