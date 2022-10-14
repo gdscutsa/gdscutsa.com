@@ -32,15 +32,6 @@ export const loader: LoaderFunction = async ({ context }) => {
   });
 };
 
-// export function ErrorBoundary() {
-//   return (
-//     <div className="flex h-screen flex-col items-center justify-center">
-//       <h1 className="text-4xl text-gray-700">Something went wrong!</h1>
-//       <p className="text-gray-600">Please try again later.</p>
-//     </div>
-//   );
-// }
-
 export default function Events() {
   const { upcomingEvents, pastEvents } = useLoaderData<LoaderData>();
 
@@ -48,28 +39,19 @@ export default function Events() {
     <main className="min-h-screen">
       <div className="flex h-screen flex-col justify-start">
         <Header />
-        <div className="min-h-[350px] w-full bg-[url('/assets/images/events_background.webp')] bg-cover bg-left bg-no-repeat py-20 px-5 md:px-8">
-          <div className="container mx-auto flex h-full max-w-6xl flex-col items-center justify-center space-y-8 p-5 md:pl-10">
-            <h1 className="text-bold text-center text-5xl text-gray-700">
-              Events
-            </h1>
-            <h2 className="max-w-md text-center text-lg text-gray-600">
-              GDSC at UTSA is commited to inspiring developers and empowering
-              students by bringing them together to learn, build, and grow.
+        <section className="relative z-10 clear-both h-auto w-full p-5 py-8 before:absolute before:inset-0 before:-z-10 before:bg-[url('/assets/images/event.webp')] before:bg-cover before:bg-center before:grayscale before:content-[''] sm:py-24 md:px-8 ">
+          <div className="container mx-auto flex max-w-6xl flex-col items-center justify-center space-y-2 bg-black bg-opacity-80 p-5 md:p-10">
+            <h1 className="text-gradient text-xl font-bold">Events</h1>
+            <h2 className="max-w-3xl text-center text-2xl font-bold text-white">
+              We're committed to inspiring developers and empowering students by
+              bringing them together to learn, build, and grow.
             </h2>
           </div>
-        </div>
-        <div className="border-t border-gray-300 bg-white py-10">
+        </section>
+        <section className="py-10 ">
           <div className="container mx-auto flex max-w-6xl flex-col items-center space-y-4">
-            <div
-              className="flex w-full flex-col items-center space-y-4 border-gray-100 pb-10"
-              style={{
-                borderBottomWidth: pastEvents.length > 0 ? '2px' : '0px',
-              }}
-            >
-              <h2 className="w-full p-5 text-center text-4xl text-gray-700 md:text-left ">
-                Upcoming Events
-              </h2>
+            <div className="flex w-full flex-col items-center space-y-4 pb-10">
+              <h2 className="p-5 pb-0 text-center text-4xl">Upcoming Events</h2>
               {upcomingEvents.length > 0 ? (
                 <ul className="flex flex-col items-center space-y-5 p-5 md:grid md:grid-cols-2 md:gap-12 md:space-y-0 lg:grid-cols-3">
                   {upcomingEvents.map((event) => (
@@ -79,14 +61,14 @@ export default function Events() {
                   ))}
                 </ul>
               ) : (
-                <p className="w-full px-12 text-center text-2xl text-gray-500 md:text-left">
+                <p className="px-5 text-center text-xl text-gray-600">
                   No upcoming events at the moment. Check back later!
                 </p>
               )}
             </div>
             {pastEvents.length > 0 ? (
               <div className="flex w-full flex-col items-center space-y-4">
-                <h2 className="w-full p-5 text-center text-4xl text-gray-700 md:text-left">
+                <h2 className="p-5 pb-0 text-center text-4xl md:text-left">
                   Past Events
                 </h2>
 
@@ -100,7 +82,7 @@ export default function Events() {
               </div>
             ) : null}
           </div>
-        </div>
+        </section>
         <Footer />
       </div>
     </main>
