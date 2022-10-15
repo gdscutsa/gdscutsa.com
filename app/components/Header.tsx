@@ -11,7 +11,7 @@ export default function Header() {
   const { pathname } = useLocation();
 
   return (
-    <header className="inset-x-0 z-10 h-16 bg-white shadow">
+    <header className="inset-x-0 z-50 h-16 bg-white shadow">
       <div
         className="fixed top-0 bottom-0 min-w-[300px] bg-white shadow transition-all duration-300 ease-in-out md:hidden"
         style={{
@@ -65,7 +65,7 @@ export default function Header() {
           </a>
         </nav>
       </div>
-      <div className="container mx-auto flex h-full max-w-6xl flex-row items-center justify-between space-x-10 px-4 md:space-x-4">
+      <div className="container mx-auto flex h-full max-w-6xl flex-row items-center justify-start space-x-10 px-4 md:justify-between md:space-x-4">
         <button
           onClick={() => {
             setIsMenuShown(true);

@@ -4,7 +4,14 @@
   -webkit-background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
-  /* display: inline-block; */
+}
+
+.text-gradient {
+  background: linear-gradient(136.7deg, #498bf4 30.2%, #e79691 76.76%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .btn {

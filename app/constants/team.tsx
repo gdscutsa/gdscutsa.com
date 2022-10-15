@@ -3,7 +3,7 @@ export type TeamMember = {
   role: string;
   nickname?: string;
   image: string;
-  accentColor?: string;
+  color?: string;
 };
 
 export const Leads: TeamMember[] = [
@@ -12,6 +12,7 @@ export const Leads: TeamMember[] = [
     role: 'GDSC Lead',
     nickname: 'Super Senpai',
     image: 'assets/images/team/hector.webp',
+    color: 'red',
   },
 ];
 
@@ -20,47 +21,47 @@ export const TeamMembers: TeamMember[] = [
     name: 'Zack Umar',
     role: 'Technology Lead',
     image: 'assets/images/team/zack.webp',
-    accentColor: 'border-blue-500',
+    color: 'blue',
   },
   {
     name: 'Zach True',
     role: 'Event Coordinator',
     nickname: 'the_milkman_42',
     image: 'assets/images/team/zach.webp',
-    accentColor: 'border-green-500',
+    color: 'green',
   },
   {
     name: 'Julio Valdes',
     role: 'Workshop Planner',
     nickname: 'Discord Hater',
     image: 'assets/images/team/julio.webp',
-    accentColor: 'border-yellow-400',
+    color: 'yellow',
   },
   {
     name: 'Hayden Hughes',
     role: 'Communications',
     nickname: 'Discord Mod',
     image: 'assets/images/team/hayden.webp',
-    accentColor: 'border-green-500',
+    color: 'green',
   },
   {
     name: 'Victor Garcia',
     role: 'Social Media Lead',
     nickname: '🎂',
     image: 'assets/images/team/victor.webp',
-    accentColor: 'border-blue-500',
+    color: 'blue',
   },
   {
     name: 'Isa Molinas',
     role: 'Web Lead',
     nickname: 'Swagmaster',
     image: 'assets/images/team/isa.webp',
-    accentColor: 'border-red-500',
+    color: 'red',
   },
   {
     name: 'Lena Haifa',
     role: 'Creative Lead',
     image: 'assets/images/team/lena.webp',
-    accentColor: 'border-yellow-500',
+    color: 'yellow',
   },
 ];

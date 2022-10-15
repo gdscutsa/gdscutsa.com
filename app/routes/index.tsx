@@ -53,7 +53,7 @@ export default function Index() {
                 </a>
               </div>
             </div>
-            <div className="-order-1 flex flex-col items-end justify-center py-8 md:order-1 md:py-0">
+            <div className="-order-1 flex h-full flex-col items-end justify-center py-8 md:order-1 md:py-0">
               <img src="assets/images/banner.webp" alt="GDSC Banner" />
               <p className="pt-1 text-xs text-slate-400">
                 Artwork by{' '}

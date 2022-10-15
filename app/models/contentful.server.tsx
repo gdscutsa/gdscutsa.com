@@ -19,9 +19,13 @@ async function apiCall(query: string, variables?: string) {
 }
 
 export async function getUpcomingEvents() {
+  const context = getContext();
+
   const query = `
   {
-    eventCollection( order: date_DESC, where: {endDate_gte: "${new Date().toISOString()}"}) {
+    eventCollection(preview: ${
+      context.ENV !== 'production'
+    } ,order: date_DESC, where: {endDate_gte: "${new Date().toISOString()}"}) {
       items {
         name
         location
@@ -65,9 +69,13 @@ export async function getUpcomingEvents() {
 }
 
 export async function getPastEvents() {
+  const context = getContext();
+
   const query = `
   {
-    eventCollection(order: date_DESC, where: {endDate_lt: "${new Date().toISOString()}"}) {
+    eventCollection(preview: ${
+      context.ENV !== 'production'
+    } ,order: date_DESC, where: {endDate_lt: "${new Date().toISOString()}"}) {
       items {
         name
         location
@@ -122,9 +130,13 @@ export type EventType = {
 };
 
 export async function getEventBySlug(slug: string): Promise<EventType[]> {
+  const context = getContext();
+
   const query = `
   {
-    eventCollection(where: {slug: "${slug}", endDate_gte: "${new Date().toISOString()}"}) {
+    eventCollection(preview: ${
+      context.ENV !== 'production'
+    } ,where: {slug: "${slug}", endDate_gte: "${new Date().toISOString()}"}) {
       items {
           name
           location
