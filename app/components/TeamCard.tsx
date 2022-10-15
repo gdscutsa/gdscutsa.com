@@ -3,7 +3,7 @@ export type TeamCardProps = {
   role: string;
   nickname?: string;
   image: string;
-  accentColor?: string;
+  color?: string;
 };
 
 export default function TeamCard({
@@ -11,18 +11,16 @@ export default function TeamCard({
   role,
   nickname,
   image,
-  accentColor,
+  color = 'red',
 }: TeamCardProps) {
+  console.log(name, `bg-${color}-500`);
+
   return (
     <div
-      className={`group flex h-96 w-72 flex-col items-center justify-center space-y-4 rounded border-b-4 bg-white shadow-xl ${
-        accentColor ?? ' border-red-500'
-      }`}
+      className={`group relative flex h-96 w-72 flex-col items-center justify-center space-y-4 bg-white shadow-xl before:absolute before:-right-1.5 before:top-[0.1875rem] before:h-full before:w-1.5 before:skew-y-[45deg] before:bg-${color}-500 before:content-[''] after:absolute after:left-[0.1875rem] after:-bottom-1.5 after:h-1.5 after:w-full after:skew-x-[45deg] after:bg-${color}-500 after:content-['']`}
     >
       <img
-        className={`h-52 w-52 rounded-full border-4 object-cover ${
-          accentColor ?? ' border-red-500'
-        }`}
+        className={`h-52 w-52 rounded-full border-4 object-cover border-${color}-500`}
         src={image}
         alt={name}
       />
@@ -43,9 +41,6 @@ export default function TeamCard({
           </span>
         )}
       </p>
-      {/* <p className="transition-opacity ease-out opacity-0 duration-500 group-hover:delay-[5s] group-hover:opacity-100">
-        {nickname ?? ''}
-      </p> */}
     </div>
   );
 }
