@@ -6,6 +6,21 @@ export type TeamCardProps = {
   accentColor?: string;
 };
 
+const getColor = (accentColor: string | undefined) => {
+  switch (accentColor) {
+    case 'red':
+      return 'border-red-500 before:bg-red-500 after:bg-red-500';
+    case 'blue':
+      return 'border-blue-500 before:bg-blue-500 after:bg-blue-500';
+    case 'green':
+      return 'border-green-500 before:bg-green-500 after:bg-green-500';
+    case 'yellow':
+      return 'border-yellow-500 before:bg-yellow-500 after:bg-yellow-500';
+    default:
+      return 'border-red-500 before:bg-red-500 after:bg-red-500';
+  }
+};
+
 export default function TeamCard({
   name,
   role,
@@ -15,14 +30,12 @@ export default function TeamCard({
 }: TeamCardProps) {
   return (
     <div
-      className={`group flex h-96 w-72 flex-col items-center justify-center space-y-4 rounded border-b-4 bg-white shadow-xl ${
-        accentColor ?? ' border-red-500'
-      }`}
+      className={`group relative flex h-96 w-72 flex-col items-center justify-center space-y-4 bg-white shadow-xl before:absolute before:-right-1.5 before:top-[0.1875rem] before:h-full before:w-1.5 before:skew-y-[45deg] before:content-[''] after:absolute after:left-[0.1875rem] after:-bottom-1.5 after:h-1.5 after:w-full after:skew-x-[45deg] after:content-[''] hover:translate-y-0.5 hover:scale-105 ${getColor(
+        accentColor
+      )}`}
     >
       <img
-        className={`h-52 w-52 rounded-full border-4 object-cover ${
-          accentColor ?? ' border-red-500'
-        }`}
+        className="h-52 w-52 rounded-full border-4 object-cover"
         src={image}
         alt={name}
       />
@@ -43,9 +56,6 @@ export default function TeamCard({
           </span>
         )}
       </p>
-      {/* <p className="transition-opacity ease-out opacity-0 duration-500 group-hover:delay-[5s] group-hover:opacity-100">
-        {nickname ?? ''}
-      </p> */}
     </div>
   );
 }
