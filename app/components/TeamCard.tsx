@@ -30,7 +30,7 @@ export default function TeamCard({
 }: TeamCardProps) {
   return (
     <div
-      className={`group relative flex h-96 w-72 flex-col items-center justify-center space-y-4 bg-white shadow-xl before:absolute before:-right-1.5 before:top-[0.1875rem] before:h-full before:w-1.5 before:skew-y-[45deg] before:content-[''] after:absolute after:left-[0.1875rem] after:-bottom-1.5 after:h-1.5 after:w-full after:skew-x-[45deg] after:content-[''] hover:translate-y-0.5 hover:scale-105 ${getColor(
+      className={`group relative flex h-96 w-72 flex-col items-center justify-center space-y-4 bg-white shadow-xl before:absolute before:-right-1.5 before:top-[0.1875rem] before:h-full before:w-1.5 before:skew-y-[45deg] before:content-[''] after:absolute after:left-[0.1875rem] after:-bottom-1.5 after:h-1.5 after:w-full after:skew-x-[45deg] after:content-[''] ${getColor(
         accentColor
       )}`}
     >
