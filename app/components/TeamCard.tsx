@@ -73,9 +73,6 @@ export default function TeamCard({
           </span>
         )}
       </p>
-      {/* <p className="transition-opacity ease-out opacity-0 duration-500 group-hover:delay-[5s] group-hover:opacity-100">
-        {nickname ?? ''}
-      </p> */}
     </div>
   );
 }
