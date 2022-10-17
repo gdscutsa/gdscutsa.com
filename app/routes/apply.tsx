@@ -11,7 +11,22 @@ export const meta: MetaFunction = () => ({
   description: SEO_DESCRIPTION,
 });
 
-function ApplicationCard({
+const getColor = (accentColor: string | undefined) => {
+  switch (accentColor) {
+    case 'red':
+      return 'text-red-500 before:bg-red-500 after:bg-red-500';
+    case 'blue':
+      return 'text-blue-500 before:bg-blue-500 after:bg-blue-500';
+    case 'green':
+      return 'text-green-500 before:bg-green-500 after:bg-green-500';
+    case 'yellow':
+      return 'text-yellow-500 before:bg-yellow-500 after:bg-yellow-500';
+    default:
+      return 'text-gray-500 before:bg-gray-500 after:bg-gray-500';
+  }
+};
+
+const ApplicationCard = ({
   title,
   description,
   link,
@@ -21,21 +36,23 @@ function ApplicationCard({
   description: string;
   link: string;
   color: string;
-}) {
+}) => {
   return (
     <a href={link}>
       <div
-        className={`group relative flex min-h-[200px] w-80 flex-col bg-white shadow-xl transition duration-300 before:absolute before:-right-1.5 before:top-[0.1875rem] before:h-full before:w-1.5 before:skew-y-[45deg] before:bg-${color}-500 before:content-[''] after:absolute after:left-[0.1875rem] after:-bottom-1.5 after:h-1.5 after:w-full after:skew-x-[45deg] after:bg-${color}-500 after:content-[''] hover:translate-y-0.5 hover:scale-105`}
+        className={`group relative flex min-h-[200px] w-80 flex-col bg-white shadow-xl transition duration-300 before:absolute before:-right-1.5 before:top-[0.1875rem] before:h-full before:w-1.5 before:skew-y-[45deg] before:content-[''] after:absolute after:left-[0.1875rem] after:-bottom-1.5 after:h-1.5 after:w-full after:skew-x-[45deg] after:content-[''] hover:translate-y-0.5 hover:scale-105 ${getColor(
+          color
+        )}`}
       >
         <div className="space-y-2 p-4">
-          <h1 className={`text-2xl font-bold text-${color}-500`}>{title}</h1>
+          <h1 className={`text-2xl font-bold`}>{title}</h1>
 
           <p className="text-sm text-gray-500">{description}</p>
         </div>
       </div>
     </a>
   );
-}
+};
 
 export default function Apply() {
   return (
