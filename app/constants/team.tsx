@@ -18,6 +18,13 @@ export const Leads: TeamMember[] = [
 
 export const TeamMembers: TeamMember[] = [
   {
+    name: 'Isa Molinas',
+    role: 'Secretary',
+    nickname: 'Swagmaster',
+    image: 'assets/images/team/isa.webp',
+    accentColor: 'green',
+  },
+  {
     name: 'Zack Umar',
     role: 'Technology Lead',
     image: 'assets/images/team/zack.webp',
@@ -51,17 +58,11 @@ export const TeamMembers: TeamMember[] = [
     image: 'assets/images/team/victor.webp',
     accentColor: 'blue',
   },
-  {
-    name: 'Isa Molinas',
-    role: 'Web Lead',
-    nickname: 'Swagmaster',
-    image: 'assets/images/team/isa.webp',
-    accentColor: 'red',
-  },
+
   {
     name: 'Lena Haifa',
     role: 'Creative Lead',
     image: 'assets/images/team/lena.webp',
-    accentColor: 'yellow',
+    accentColor: 'red',
   },
 ];
