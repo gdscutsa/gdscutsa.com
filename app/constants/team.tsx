@@ -42,7 +42,7 @@ export const TeamMembers: TeamMember[] = [
     role: 'Workshop Planner',
     nickname: 'Discord Hater',
     image: 'assets/images/team/julio.webp',
-    accentColor: 'yellow',
+    accentColor: 'blue',
   },
   {
     name: 'Hayden Hughes',
@@ -63,6 +63,6 @@ export const TeamMembers: TeamMember[] = [
     name: 'Lena Haifa',
     role: 'Creative Lead',
     image: 'assets/images/team/lena.webp',
-    accentColor: 'red',
+    accentColor: 'yellow',
   },
 ];
