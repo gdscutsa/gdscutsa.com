@@ -1,7 +1,6 @@
 export const GDSC_INFO_LINK = 'https://developers.google.com/community/gdsc';
 
-export const GDSC_LOGIN_LINK =
-  'https://gdsc.community.dev/accounts/login/?next=/the-university-of-texas-at-san-antonio/';
+export const GDSC_APPLY_LINK = '/apply';
 
 export const ROWDYLINK_LINK = 'https://rowdylink.utsa.edu/organization/gdsc';
 export const DISCORD_LINK = 'https://discord.gg/J3YuxadXAC';
