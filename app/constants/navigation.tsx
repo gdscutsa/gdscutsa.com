@@ -34,7 +34,7 @@ export const FooterNavigation: NavItem[] = [
   { to: '/events', name: 'Events' },
   { to: '/projects', name: 'Projects' },
   { to: '/team', name: 'Team' },
-  { to: ROWDYLINK_LINK, name: 'RowdyLink' },
+  { to: '/apply', name: 'Apply' },
   { to: '/links', name: 'Links' },
 ];
 
