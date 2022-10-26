@@ -11,7 +11,7 @@ export const meta: MetaFunction = () => ({
   description: SEO_DESCRIPTION,
 });
 
-const getColor = (accentColor: string | undefined) => {
+const getColor = (accentColor?: string) => {
   switch (accentColor) {
     case 'red':
       return 'text-red-500 before:bg-red-500 after:bg-red-500';
@@ -38,7 +38,7 @@ const ApplicationCard = ({
   color: string;
 }) => {
   return (
-    <a href={link}>
+    <a href={link} target="_blank" rel="noopener noreferrer">
       <div
         className={`group relative flex min-h-[200px] w-80 flex-col bg-white shadow-xl transition duration-300 before:absolute before:-right-1.5 before:top-[0.1875rem] before:h-full before:w-1.5 before:skew-y-[45deg] before:content-[''] after:absolute after:left-[0.1875rem] after:-bottom-1.5 after:h-1.5 after:w-full after:skew-x-[45deg] after:content-[''] hover:translate-y-0.5 hover:scale-105 ${getColor(
           color
@@ -64,7 +64,7 @@ export default function Apply() {
           className="h-[350px] w-full object-cover object-center grayscale"
           alt="kickoff event"
         ></img>
-        <section className="relative w-full px-5 pt-12 pb-8 after:absolute after:left-0 after:bottom-0 after:h-1.5 after:w-full after:bg-gradient-to-r after:from-blue-500 after:to-red-500 md:px-8">
+        <section className="relative w-full px-5 pt-12 pb-8 after:absolute after:left-0 after:top-0 after:right-0 after:h-1.5 after:bg-gradient-to-r after:from-blue-500 after:to-red-500 md:px-8">
           <div className="container mx-auto max-w-6xl">
             <h1 className="text-2xl font-medium text-gray-400">
               At Google Student Developer Clubs UTSA,
@@ -77,7 +77,9 @@ export default function Apply() {
                 speed={150}
               />
             </h2>
-            <h3 className="py-3 text-xl font-bold">Applications are open!</h3>
+            <h3 className="py-3 text-xl font-bold text-gray-700">
+              Applications are open!
+            </h3>
             <div className="grid grid-cols-1 gap-8 py-8 md:grid-cols-2">
               <div>
                 <h3 className="text-rainbow font-bold">Our Mission</h3>
@@ -107,13 +109,13 @@ export default function Apply() {
             <div className="flex w-full flex-col items-center gap-4 px-6 py-6 sm:flex-row md:items-start md:px-0">
               <ApplicationCard
                 title="Officer"
-                description="Do you want to lead a community? Join our officer team!"
+                description="Do you want to lead a community and make a change? Join our officer team today!"
                 link="https://forms.gle/q966WJLmmjsBcijL9"
                 color="red"
               />
               <ApplicationCard
                 title="Subcommittee"
-                description="Do you want to be apart of a team and help run workshops?
+                description="Do you want to be a part of a team and help run workshops?
                 Join a subcommittee and help us grow our community!"
                 link="https://forms.gle/s7af1Le7KhKEMws56"
                 color="blue"
