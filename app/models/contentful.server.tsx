@@ -136,7 +136,7 @@ export async function getEventBySlug(slug: string): Promise<EventType[]> {
   {
     eventCollection(preview: ${
       context.ENV !== 'production'
-    } ,where: {slug: "${slug}", endDate_gte: "${new Date().toISOString()}"}) {
+    } ,where: {slug: "${slug}"}) {
       items {
           name
           location
