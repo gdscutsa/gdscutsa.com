@@ -3,6 +3,7 @@ import { Link } from '@remix-run/react';
 import Footer from '~/components/Footer';
 import Header from '~/components/Header';
 import { TypeWriter } from '~/components/Typewriter';
+import { WebFrame } from '~/components/WebFrame';
 import { DISCORD_LINK, GDSC_INFO_LINK } from '~/constants/links';
 import { SEO_DESCRIPTION } from '~/constants/seo';
 
@@ -53,8 +54,18 @@ export default function Index() {
                 </a>
               </div>
             </div>
-            <div className="-order-1 flex h-full flex-col items-end justify-center py-8 md:order-1 md:py-0">
-              <img src="assets/images/banner.webp" alt="GDSC Banner" />
+            <div className="-order-1 flex h-full w-full flex-col items-end justify-center py-8 md:order-1 md:py-0">
+              <WebFrame
+                className="h-fit max-h-[500px] w-full "
+                title="gdsc.png"
+                hint
+              >
+                <img
+                  src="assets/images/banner.webp"
+                  alt="GDSC Banner"
+                  className="h-full w-full object-contain"
+                />
+              </WebFrame>
               <p className="pt-1 text-xs text-slate-400">
                 Artwork by{' '}
                 <a
