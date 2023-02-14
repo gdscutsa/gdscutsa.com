@@ -135,7 +135,7 @@ export default function Links() {
       <img
         src="assets/images/pointing_guy.webp"
         alt="guy pointing"
-        className="absolute -left-10 hidden h-52 rotate-[60deg] md:bottom-52 md:block lg:bottom-60"
+        className="absolute -left-10 hidden h-52 rotate-[60deg] md:bottom-48 md:block lg:bottom-56"
       ></img>
       <div className="absolute bottom-10 left-10 hidden space-y-1 md:block">
         {/* <h3 className="text-lg font-medium text-gray-700">Share this page!</h3> */}
