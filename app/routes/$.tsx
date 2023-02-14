@@ -1,6 +1,13 @@
 import type { LoaderFunction, MetaFunction } from '@remix-run/cloudflare';
 import { json } from '@remix-run/cloudflare';
-import { Link, useCatch, useLoaderData, useParams } from '@remix-run/react';
+import {
+  Link,
+  useCatch,
+  useLoaderData,
+  useLocation,
+  useParams,
+} from '@remix-run/react';
+import QRCode from 'react-qr-code';
 import { DISCORD_LINK } from '~/constants/links';
 import type { NavItemProps } from '~/constants/quicknav';
 import { SEO_DESCRIPTION } from '~/constants/seo';
@@ -102,6 +109,8 @@ export default function Links() {
     event: { name, location, date, desc, eventLink },
   } = useLoaderData<LoaderData>();
 
+  const { pathname } = useLocation();
+
   const dateObj = new Date(date);
 
   const Links: NavItemProps[] = [
@@ -119,10 +128,25 @@ export default function Links() {
     },
   ];
 
+  // md:bg-[length:490px_708px]
+
   return (
-    <main className="flex h-auto min-h-screen flex-col items-center justify-start md:bg-[url('/assets/images/beanbag.webp')] md:bg-[length:638px_308px] md:bg-right-bottom md:bg-no-repeat">
+    <main className="relative flex h-auto min-h-screen flex-col items-center justify-start md:bg-[url('/assets/images/computer_lad.webp')] md:bg-[length:15%] md:bg-[bottom_1rem_right_1rem] md:bg-no-repeat">
+      <img
+        src="assets/images/pointing_guy.webp"
+        alt="guy pointing"
+        className="absolute -left-10 hidden h-52 rotate-[60deg] md:bottom-52 md:block lg:bottom-60"
+      ></img>
+      <div className="absolute bottom-10 left-10 hidden space-y-1 md:block">
+        {/* <h3 className="text-lg font-medium text-gray-700">Share this page!</h3> */}
+        <QRCode
+          value={`https://gdscutsa.com${pathname}`}
+          className="h-40 w-40 lg:h-48 lg:w-48"
+        />
+      </div>
+
       <div className="px-5">
-        <div className="container max-w-lg space-y-6 pt-10 md:pt-20">
+        <div className="container relative max-w-lg space-y-6 pt-10 md:pt-20">
           <Link to={'/'}>
             <img
               className="object-cover"
@@ -130,7 +154,6 @@ export default function Links() {
               alt="GDSC UTSA"
             />
           </Link>
-
           <h1 className="text-5xl font-bold text-gray-700">{name}</h1>
           <div>
             <h2 className="text-xl font-bold text-gray-700">
@@ -170,7 +193,7 @@ export default function Links() {
         </div>
       </div>
 
-      <div className="mt-5 h-full w-full flex-grow bg-[url('/assets/images/beanbag.webp')] bg-cover bg-clip-content bg-right-top bg-no-repeat md:hidden md:bg-[length:638px_308px]"></div>
+      <div className="mt-5 h-full w-full flex-grow bg-[url('/assets/images/jump_girl.webp')] bg-[length:50%]  bg-clip-content bg-[top_center] bg-no-repeat sm:mt-10 md:hidden"></div>
     </main>
   );
 }
