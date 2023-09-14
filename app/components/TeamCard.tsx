@@ -63,7 +63,7 @@ export default function TeamCard({
             <span className="absolute top-1/2 left-1/2 block -translate-x-1/2 -translate-y-1/2 transform overflow-hidden opacity-100 transition-all duration-1000 group-hover:opacity-0 group-hover:delay-[3s]">
               {role}
             </span>
-            <span className="absolute top-1/2 left-1/2 block -translate-x-1/2 -translate-y-1/2 transform overflow-hidden opacity-0 transition-all duration-1000 group-hover:opacity-100 group-hover:delay-[3s]">
+            <span className="absolute top-1/2 left-1/2 block -translate-x-1/2 -translate-y-1/2 transform overflow-hidden text-clip opacity-0 transition-all duration-1000 group-hover:opacity-100 group-hover:delay-[3s]">
               "{nickname}"
             </span>
           </>

@@ -173,4 +173,61 @@ export async function getEventBySlug(slug: string): Promise<EventType[]> {
   return Promise.all(formattedData);
 }
 
-export const client = { getUpcomingEvents, getPastEvents, getEventBySlug };
+type TeamMemeberType = {
+  name: string;
+  role: string;
+  nickname: string;
+  isPresident: boolean;
+  imageUrl: string;
+  imageTitle: string;
+};
+
+export async function getTeamMembers(): Promise<TeamMemeberType[]> {
+  const context = getContext();
+
+  const query = ` {
+    teamMemberCollection (preview: ${context.ENV !== 'production'}) {
+      items {
+        name
+        role
+        nickname
+        isPresident
+        image {url, title}
+      }
+    }
+  }
+  `;
+
+  const response = await apiCall(query);
+  const json: any = await response.json();
+
+  console.log(json);
+
+  const formattedData = await json.data.teamMemberCollection.items.map(
+    async (project: {
+      name: string;
+      role: string;
+      nickname: string;
+      isPresident: boolean;
+      image: any;
+    }) => {
+      const { name, role, nickname, isPresident, image } = project;
+      return {
+        name,
+        role,
+        nickname,
+        isPresident,
+        imageUrl: image.url,
+        imageTitle: image.title,
+      };
+    }
+  );
+  return Promise.all(formattedData);
+}
+
+export const client = {
+  getUpcomingEvents,
+  getPastEvents,
+  getEventBySlug,
+  getTeamMembers,
+};
